@@ -1,0 +1,183 @@
+/* ============================================
+   LAYOUT ANATOMY ANALYZER — WIREFRAME STYLES
+   ============================================
+   Embedded CSS for SVG wireframes.
+   Include this in <style> tags within each SVG.
+   ============================================ */
+
+/* Import design tokens */
+@import url('./tokens.css');
+
+/* -------------------------------------------
+   LAYER STYLES
+   ------------------------------------------- */
+
+#layer-page {
+  /* Page frame styling */
+}
+
+#layer-grid {
+  /* Grid system styling */
+}
+
+.grid-line {
+  stroke: var(--la-grid-line);
+  stroke-width: var(--la-stroke-grid);
+}
+
+.grid-line-major {
+  stroke: var(--la-grid-line-major);
+  stroke-width: var(--la-stroke-grid);
+}
+
+.gutter {
+  fill: var(--la-gutter);
+  fill-opacity: 0.3;
+}
+
+#layer-content {
+  /* Content block styling */
+}
+
+.content-block {
+  stroke-width: var(--la-stroke-element);
+  fill-opacity: var(--la-fill-opacity);
+  stroke-opacity: var(--la-stroke-opacity);
+}
+
+.content-block.text-heading {
+  fill: var(--la-text-heading);
+  stroke: var(--la-text-heading);
+}
+
+.content-block.text-body {
+  fill: var(--la-text-body);
+  stroke: var(--la-text-body);
+}
+
+.content-block.text-caption {
+  fill: var(--la-text-caption);
+  stroke: var(--la-text-caption);
+}
+
+.content-block.text-pullquote {
+  fill: var(--la-text-pullquote);
+  stroke: var(--la-text-pullquote);
+}
+
+.content-block.image-photo {
+  fill: var(--la-image-photo);
+  stroke: var(--la-image-photo);
+}
+
+.content-block.image-illustration {
+  fill: var(--la-image-illustration);
+  stroke: var(--la-image-illustration);
+}
+
+.content-block.image-icon {
+  fill: var(--la-image-icon);
+  stroke: var(--la-image-icon);
+}
+
+.content-block.shape-decorative {
+  fill: var(--la-shape-decorative);
+  stroke: var(--la-shape-decorative);
+}
+
+.content-block.shape-functional {
+  fill: var(--la-shape-functional);
+  stroke: var(--la-shape-functional);
+}
+
+.content-block.whitespace {
+  fill: var(--la-whitespace);
+  stroke: var(--la-annotation-line);
+  stroke-dasharray: 2,2;
+}
+
+.content-block.bleed {
+  fill: var(--la-bleed);
+  stroke: var(--la-bleed);
+}
+
+#layer-flow {
+  /* Flow and direction styling */
+}
+
+.flow-arrow {
+  stroke: var(--la-direction-vector);
+  stroke-width: 2px;
+  fill: none;
+}
+
+.entry-point {
+  fill: var(--la-direction-vector);
+}
+
+#layer-annotations {
+  /* Annotation styling */
+}
+
+.dimension-line {
+  stroke: var(--la-dimension-line);
+  stroke-width: var(--la-stroke-dimension);
+}
+
+.alignment-line {
+  stroke: var(--la-alignment-line);
+  stroke-width: var(--la-stroke-annotation);
+  stroke-dasharray: 2,2;
+}
+
+#layer-legend {
+  /* Legend styling */
+}
+
+/* -------------------------------------------
+   TYPOGRAPHY
+   ------------------------------------------- */
+
+.content-label {
+  font-family: var(--la-font-annotation);
+  font-size: var(--la-font-size-label);
+  fill: var(--la-annotation-text);
+  text-anchor: start;
+  dominant-baseline: text-before-edge;
+}
+
+.column-label {
+  font-family: var(--la-font-annotation);
+  font-size: var(--la-font-size-dimension);
+  fill: var(--la-annotation-text);
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.measurement-label {
+  font-family: var(--la-font-annotation);
+  font-size: var(--la-font-size-dimension);
+  fill: var(--la-annotation-text);
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.legend-label {
+  font-family: var(--la-font-annotation);
+  font-size: 8px;
+  fill: var(--la-annotation-text);
+  text-anchor: start;
+  dominant-baseline: central;
+}
+
+/* -------------------------------------------
+   PATTERNS
+   ------------------------------------------- */
+
+.image-pattern {
+  fill: url(#image-hatch);
+}
+
+.whitespace-pattern {
+  fill: url(#whitespace-dots);
+}

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editorial Magazine Spread - Layout Analysis</title>
+    <link rel="stylesheet" href="../shared/tokens.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--la-page-bg);
+            line-height: 1.4;
+        }
+        
+        .spread-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 46.7% 6.6% 46.7%; /* Left page | Gutter | Right page */
+            height: 760px;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* LEFT PAGE: 5-column asymmetric grid */
+        .page-left {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 14% 14% 21% 23% 20%; /* Measured proportions */
+            grid-template-rows: 80px 130px 420px 80px; /* Zone heights */
+            gap: 0;
+            position: relative;
+            background: white;
+        }
+        
+        /* Header spanning full width */
+        .header {
+            grid-column: 1 / -1;
+            grid-row: 1;
+            font-size: 11px;
+            font-weight: 500;
+            color: #333;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Limited Edition notice */
+        .limited-edition {
+            grid-column: 1;
+            grid-row: 2;
+            font-size: 9px;
+            font-weight: bold;
+            color: #000;
+            padding: 10px 0;
+            line-height: 1.2;
+        }
+        
+        /* Wallpaperlab branded box */
+        .wallpaperlab-box {
+            grid-column: 2 / 4; /* Spans columns 2-3 */
+            grid-row: 2;
+            border: 2px solid #000;
+            padding: 15px;
+            position: relative;
+            background: #fafafa;
+        }
+        
+        .wallpaperlab-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #000;
+        }
+        
+        .wallpaperlab-content {
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: 8px;
+            line-height: 1.3;
+            background: white;
+            height: 60px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .content-item {
+            font-size: 7px;
+            color: #666;
+        }
+        
+        /* Main text block - newspaper style */
+        .main-text {
+            grid-column: 1 / 3; /* Spans columns 1-2 */
+            grid-row: 3;
+            font-size: 9px;
+            line-height: 1.1;
+            color: #000;
+            padding-right: 10px;
+            overflow: hidden;
+            text-align: justify;
+        }
+        
+        /* Business card element */
+        .business-card {
+            grid-column: 1;
+            grid-row: 4;
+            border: 1px solid #000;
+            padding: 8px;
+            font-size: 7px;
+            background: white;
+            height: 40px;
+        }
+        
+        /* Gutter */
+        .gutter {
+            background: var(--la-gutter);
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+        }
+        
+        /* RIGHT PAGE: Black background with large typography */
+        .page-right {
+            background: #000;
+            color: white;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 80px 1fr auto;
+            position: relative;
+        }
+        
+        .right-header {
+            font-size: 11px;
+            color: white;
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Large display typography */
+        .display-typography {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .numbers-title {
+            font-size: clamp(60px, 15vw, 120px);
+            font-weight: 300;
+            font-family: 'Times New Roman', serif;
+            letter-spacing: -2px;
+            line-height: 0.8;
+            margin: 0;
+            color: white;
+        }
+        
+        .author-name {
+            font-size: clamp(40px, 10vw, 80px);
+            font-weight: 300;
+            font-family: 'Times New Roman', serif;
+            letter-spacing: -1px;
+            line-height: 0.8;
+            margin: 20px 0 0 0;
+            color: white;
+        }
+        
+        /* Credits */
+        .credits {
+            font-size: 9px;
+            line-height: 1.3;
+            color: #ccc;
+            padding-top: 20px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .spread-container {
+                display: block;
+                height: auto;
+            }
+            
+            .page-left {
+                display: block;
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .wallpaperlab-box {
+                margin: 15px 0;
+            }
+            
+            .main-text {
+                margin: 15px 0;
+                columns: 1;
+            }
+            
+            .page-right {
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            .numbers-title {
+                font-size: 48px;
+            }
+            
+            .author-name {
+                font-size: 32px;
+            }
+            
+            /* LOST IN RESPONSIVE: 
+               - 5-column grid relationship collapses
+               - Dramatic scale contrast is reduced  
+               - Wallpaperlab box loses grid positioning
+               - Overall spread proportional relationship lost */
+        }
+        
+        /* Layout Analysis Panel - Floating Box */
+        .layer-demo {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 12px;
+            font-family: monospace;
+            font-size: 10px;
+            border-radius: 4px;
+            max-width: 300px;
+        }
+        
+        /* Grid debugging (remove in production) */
+        .debug .page-left {
+            background-image: 
+                repeating-linear-gradient(90deg, 
+                    transparent, transparent 13%, 
+                    rgba(0,206,209,0.2) 13%, rgba(0,206,209,0.2) 14%,
+                    transparent 14%, transparent 27%,
+                    rgba(0,206,209,0.2) 27%, rgba(0,206,209,0.2) 28%,
+                    transparent 28%, transparent 48%,
+                    rgba(0,206,209,0.2) 48%, rgba(0,206,209,0.2) 49%,
+                    transparent 49%, transparent 71%,
+                    rgba(0,206,209,0.2) 71%, rgba(0,206,209,0.2) 72%,
+                    transparent 72%, transparent 91%,
+                    rgba(0,206,209,0.2) 91%, rgba(0,206,209,0.2) 92%);
+        }
+    </style>
+</head>
+<body>
+    <div class="spread-container">
+        <!-- LEFT PAGE -->
+        <div class="page-left">
+            <div class="header">
+                <span>SPECIMEN MAGAZINE</span>
+                <span>FORM</span>
+                <span>WALLPAPERLAB</span>
+                <span>NO</span>
+            </div>
+            
+            <div class="limited-edition">
+                <strong>Limited Edition</strong><br>
+                Anna Włazgorki
+            </div>
+            
+            <div class="wallpaperlab-box">
+                <div class="wallpaperlab-title">wallpaperlab</div>
+                <div class="wallpaperlab-content">
+                    <div class="content-item">Art Residence</div>
+                    <div class="content-item">Interior Design</div>
+                    <div class="content-item">New Products</div>
+                    <div class="content-item">Creative Space</div>
+                    <div class="content-item">Young British</div>
+                    <div class="content-item">Design Today</div>
+                    <div class="content-item">Culture Live</div>
+                    <div class="content-item">Asia Young</div>
+                </div>
+            </div>
+            
+            <div class="main-text">
+                <p><strong>TRYING TO COUNT, I LYING. STILL TO FORCE A DREAM, URT CONSERVATIVES TO LENDING URGES UNITY</strong></p>
+                
+                <p>My 2006 is Paul For Essential, W RECEIVED $100,000 AS SAKTO, MICK IN BUSH TO REMOVE LYING, UA $12 TRILLION TAX CUT CHING VISTAGE LAR GUTS CALLS TH LSETBACK FOR WHICH SEEMS KEY AT GENEVA, CAMPAIGN MEAS</p>
+                
+                <p>Bloomberg News reported INTODAY BUSH LEADS TH YPFUL PLAN BUSH NEWS, RANTS TO ACLU ARE VAVA, MIKCAMPAIGN MEAS SAMOKT</p>
+                
+                <p>MAY CAN USO MORE AFIRE RESURRECTING EVEN LADEN</p>
+                
+                <p>UNKNOWN EI FINISH</p>
+                
+                <p>I was aware this time that the election, the debate was a former NASA FINDS CLU</p>
+                
+                <p>BOMBED INIES ROWER TO CONVENIENT REPUBLICAN CUO</p>
+                
+                <p>Congressional Social Issues. I American New Headlines Elimination China City Folks</p>
+                
+                <p>ENERGY CUE INEFFORT TO</p>
+                
+                <p>With in Car Clinton Senator Ross.</p>
+                
+                <p>RING ABUSE SCANDAL ON USA NASA FINDS CLU</p>
+                
+                <p>AGENT NASA FINDS CLU</p>
+                
+                <p>POMFOUND TIES POWER TO CONVENIENT REPUBLICAN CUO</p>
+            </div>
+            
+            <div class="business-card">
+                <div style="font-size: 6px;">www.wallpaperlab.com</div>
+            </div>
+        </div>
+        
+        <!-- GUTTER -->
+        <div class="gutter"></div>
+        
+        <!-- RIGHT PAGE -->
+        <div class="page-right">
+            <div class="right-header">
+                <span>SPECIMEN MAGAZINE</span>
+                <span>FORM</span>
+                <span>ONE BY FIVE</span>
+                <span>NUMBERS</span>
+            </div>
+            
+            <div class="display-typography">
+                <h1 class="numbers-title">NUMBERS</h1>
+                <h2 class="author-name">RON KEYSON</h2>
+            </div>
+            
+            <div class="credits">
+                <strong>ABOUT THE AUTHOR</strong><br>
+                RON KEYSON is an award-winning writer and musician<br>
+                who lives in New York City.
+            </div>
+        </div>
+    </div>
+    
+    <!-- Layout Analysis Panel - Floating Box -->
+    <div class="layer-demo">
+        <div><strong>LAYOUT ANALYSIS - EDITORIAL MAGAZINE SPREAD</strong></div>
+        <div style="margin-top: 8px;">
+            <div><strong>Grid System:</strong></div>
+            <div>Left: 14% | 14% | 21% | 23% | 20% (asymmetric 5-col)</div>
+            <div>Right: Typographic zones</div>
+        </div>
+        <div style="margin-top: 8px;">
+            <div><strong>Proportions:</strong></div>
+            <div>Spread 1.6:1 ≈ φ | Main text 35%×54%</div>
+            <div>Display type 67%×45%</div>
+        </div>
+        <div style="margin-top: 8px; border-top: 1px solid #666; padding-top: 8px;">
+            <strong>Key Insight:</strong> Maximum contrast design<br>
+            Dense left page vs. minimal right page with 100% black background<br>
+            <strong>Challenge:</strong> Scale relationships lost on mobile
+        </div>
+    </div>
+</body>
+</html>

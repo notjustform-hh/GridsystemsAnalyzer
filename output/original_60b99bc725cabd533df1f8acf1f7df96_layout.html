@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Magazine Spread - Layout Analysis</title>
+    <link rel="stylesheet" href="../shared/tokens.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: var(--la-page-bg);
+            line-height: 1.4;
+            color: #000;
+        }
+        
+        .spread-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 670px 20px 670px; /* Left page | Gutter | Right page */
+            height: 900px;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* LEFT PAGE */
+        .page-left {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 50px 440px 360px; /* Header | Photo | Text */
+            position: relative;
+            background: white;
+        }
+        
+        /* RIGHT PAGE */
+        .page-right {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 50px; /* Main content | Spine text */
+            grid-template-rows: 50px 440px 360px; /* Header | Photo | Text */
+            position: relative;
+            background: white;
+        }
+        
+        /* HEADERS */
+        .header-left {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 10px;
+            font-weight: 400;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .header-right {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 10px;
+            font-weight: 400;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* PHOTOGRAPHIC AREA */
+        .photo-area-left {
+            background: 
+                linear-gradient(to right, 
+                    rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.05) 12%, transparent 13%,
+                    transparent 24%, rgba(0,0,0,0.05) 25%, transparent 26%,
+                    transparent 37%, rgba(0,0,0,0.05) 38%, transparent 39%,
+                    transparent 50%, rgba(0,0,0,0.05) 51%, transparent 52%,
+                    transparent 63%, rgba(0,0,0,0.05) 64%, transparent 65%,
+                    transparent 76%, rgba(0,0,0,0.05) 77%, transparent 78%,
+                    transparent 89%, rgba(0,0,0,0.05) 90%, rgba(0,0,0,0.1) 100%),
+                linear-gradient(to bottom, 
+                    #000 0%, #000 25%, #fff 26%, #fff 74%, #000 75%, #000 100%);
+            position: relative;
+            border-right: 1px solid #ddd;
+        }
+        
+        .photo-area-right {
+            background: 
+                linear-gradient(to right, 
+                    rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.05) 12%, transparent 13%,
+                    transparent 24%, rgba(0,0,0,0.05) 25%, transparent 26%,
+                    transparent 37%, rgba(0,0,0,0.05) 38%, transparent 39%,
+                    transparent 50%, rgba(0,0,0,0.05) 51%, transparent 52%,
+                    transparent 63%, rgba(0,0,0,0.05) 64%, transparent 65%,
+                    transparent 76%, rgba(0,0,0,0.05) 77%, transparent 78%,
+                    transparent 89%, rgba(0,0,0,0.05) 90%, rgba(0,0,0,0.1) 100%),
+                linear-gradient(to bottom, 
+                    #000 0%, #000 25%, #fff 26%, #fff 74%, #000 75%, #000 100%);
+            position: relative;
+            border-left: 1px solid #ddd;
+            grid-column: 1;
+        }
+        
+        /* Photo overlay to represent repeated portraits */
+        .photo-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            background: rgba(0,0,0,0.3);
+        }
+        
+        /* TEXT AREAS */
+        .text-area-left {
+            display: grid;
+            grid-template-columns: 160px 160px 160px; /* 3 columns */
+            gap: 20px;
+            padding-top: 20px;
+        }
+        
+        .text-area-right {
+            display: grid;
+            grid-template-columns: 160px 160px 160px; /* 3 columns */
+            gap: 20px;
+            padding-top: 20px;
+            grid-column: 1;
+        }
+        
+        .text-column {
+            font-size: 9px;
+            line-height: 1.4;
+            color: #000;
+            text-align: justify;
+        }
+        
+        /* VERTICAL SPINE TEXT */
+        .spine-text {
+            grid-column: 2;
+            grid-row: 3;
+            writing-mode: vertical-lr;
+            text-orientation: mixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            color: #000;
+            letter-spacing: 2px;
+        }
+        
+        /* GUTTER */
+        .gutter {
+            background: var(--la-gutter);
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            position: relative;
+        }
+        
+        .gutter::before {
+            content: "SPINE";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(90deg);
+            font-size: 8px;
+            color: #999;
+            font-family: monospace;
+        }
+        
+        /* Layout Analysis Panel - Floating Box */
+        .layer-demo {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 12px;
+            font-family: monospace;
+            font-size: 10px;
+            border-radius: 4px;
+            max-width: 300px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .spread-container {
+                display: block;
+                height: auto;
+                max-width: 100%;
+            }
+            
+            .page-left,
+            .page-right {
+                display: block;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .header-left,
+            .header-right {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+                margin-bottom: 20px;
+                font-size: 12px;
+            }
+            
+            .photo-area-left,
+            .photo-area-right {
+                height: 200px;
+                margin: 20px 0;
+                background: linear-gradient(to bottom, #000 0%, #000 30%, #fff 31%, #fff 69%, #000 70%, #000 100%);
+            }
+            
+            .photo-overlay {
+                font-size: 12px;
+            }
+            
+            .text-area-left,
+            .text-area-right {
+                display: block;
+                padding-top: 10px;
+            }
+            
+            .text-column {
+                font-size: 12px;
+                margin-bottom: 15px;
+                text-align: left;
+            }
+            
+            .spine-text {
+                writing-mode: horizontal-tb;
+                text-orientation: mixed;
+                margin: 15px 0;
+                text-align: center;
+            }
+            
+            .gutter {
+                display: none;
+            }
+            
+            /* LOST IN RESPONSIVE: 
+               - Dramatic horizontal photo/text 60/40 division collapses
+               - 9-portrait simultaneous viewing becomes sequential scroll
+               - 6-column sophisticated text grid becomes single-column stack
+               - Vertical spine typography loses editorial sophistication
+               - Full-width photographic impact reduced to mobile-sized banner
+               - Spread experience of pattern recognition across width eliminated */
+        }
+    </style>
+</head>
+<body>
+    <div class="spread-container">
+        <!-- LEFT PAGE -->
+        <div class="page-left">
+            <div class="header-left">
+                <span>Interview Magazine #4</span>
+                <span>Albert Watson</span>
+                <span>In The Moment</span>
+            </div>
+            
+            <div class="photo-area-left">
+                <div class="photo-overlay">
+                    REPEATED PORTRAIT PHOTOGRAPHY<br>
+                    Nine figures with sunglasses<br>
+                    B&W high contrast series
+                </div>
+            </div>
+            
+            <div class="text-area-left">
+                <div class="text-column">
+                    <p><strong>Albert Watson</strong> is one of the most successful fashion and commercial photographers working today. His striking images have appeared on more than 100 covers of Vogue around the world and have been featured in countless other publications.</p>
+                    <p>Born in Edinburgh, Scotland, Watson studied graphic design at the Duncan of Jordanstone College of Art and Design in Dundee, and film and television at the Royal College of Art in London.</p>
+                </div>
+                <div class="text-column">
+                    <p>Though Watson started his career in photography somewhat by chance, he quickly developed a distinctive style characterized by sharp contrasts, careful attention to detail, and a strong sense of narrative.</p>
+                    <p>His celebrity portraits, fashion editorials, and commercial work have earned him numerous awards and recognition throughout his career spanning over four decades.</p>
+                </div>
+                <div class="text-column">
+                    <p>In this exclusive interview, Watson discusses his approach to portrait photography, his collaboration with top models and celebrities, and the evolution of his artistic vision.</p>
+                    <p>From his early days working with Vogue to his recent projects, Watson continues to push the boundaries of contemporary photography.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- GUTTER -->
+        <div class="gutter"></div>
+        
+        <!-- RIGHT PAGE -->
+        <div class="page-right">
+            <div class="header-right">
+                <span>Interview Magazine #4</span>
+                <span>Albert Watson</span>
+                <span>In The Moment</span>
+            </div>
+            
+            <div class="photo-area-right">
+                <div class="photo-overlay">
+                    CONTINUED PORTRAIT SERIES<br>
+                    Consistent lighting and composition<br>
+                    Creating visual rhythm
+                </div>
+            </div>
+            
+            <div class="text-area-right">
+                <div class="text-column">
+                    <p>"Photography is about capturing a moment," Watson explains. "But it's also about creating an entire world within that single frame. Every element must work together."</p>
+                    <p>His meticulous attention to lighting, composition, and styling has made him one of the most sought-after photographers in the industry.</p>
+                </div>
+                <div class="text-column">
+                    <p>Watson's work often features dramatic contrasts between light and shadow, creating images that are both striking and memorable. His portraits reveal the personality of his subjects while maintaining his distinctive aesthetic.</p>
+                    <p>The photographer's client list reads like a who's who of entertainment and fashion, including collaborations with major brands and publications worldwide.</p>
+                </div>
+                <div class="text-column">
+                    <p>Looking toward the future, Watson continues to explore new technologies and techniques while staying true to his artistic vision. His work remains as relevant and powerful today as it was when he first started.</p>
+                    <p>"The key is to never stop learning," he concludes. "Every shoot teaches you something new about light, about people, about storytelling."</p>
+                </div>
+            </div>
+            
+            <div class="spine-text">
+                ALBERT WATSON
+            </div>
+        </div>
+    </div>
+    
+    <!-- Layout Analysis Panel - Floating Box -->
+    <div class="layer-demo">
+        <div><strong>LAYOUT ANALYSIS - INTERVIEW MAGAZINE SPREAD</strong></div>
+        <div style="margin-top: 8px;">
+            <div><strong>Grid System:</strong></div>
+            <div>Horizontal: 60% photo, 40% text</div>
+            <div>Text: 6-column grid (3 per page)</div>
+        </div>
+        <div style="margin-top: 8px;">
+            <div><strong>Proportions:</strong></div>
+            <div>Spread 1.56:1 ≈ φ | 1400×900px</div>
+            <div>Photo spans 93% width</div>
+        </div>
+        <div style="margin-top: 8px; border-top: 1px solid #666; padding-top: 8px;">
+            <strong>Key Insight:</strong> Editorial photography emphasis<br>
+            Repeated portraits create visual rhythm pattern<br>
+            <strong>Challenge:</strong> Horizontal photo impact lost on mobile
+        </div>
+    </div>
+</body>
+</html>

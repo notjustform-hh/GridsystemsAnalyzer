@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================
+     LAYOUT ANATOMY ANALYZER — SVG TEMPLATE
+     ============================================
+     Reference template for SVG wireframe structure.
+     ALL generated SVGs must follow this layer order.
+     ============================================ -->
+
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1000 1414" 
+     role="img" 
+     aria-label="Layout wireframe template">
+
+  <defs>
+    <!-- Reusable patterns -->
+    <pattern id="image-hatch" patternUnits="userSpaceOnUse" width="8" height="8">
+      <path d="M0,0 L8,8 M0,8 L8,0" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+    
+    <pattern id="whitespace-dots" patternUnits="userSpaceOnUse" width="12" height="12">
+      <circle cx="6" cy="6" r="1" fill="currentColor" opacity="0.2"/>
+    </pattern>
+    
+    <!-- Arrowhead marker for flow indicators -->
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+              refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="var(--la-direction-vector)" />
+      </marker>
+    </defs>
+  </defs>
+
+  <!-- LAYER 1: Page Frame -->
+  <g id="layer-page" data-layer="page">
+    <!-- Page boundary rectangle -->
+    <rect x="0" y="0" width="1000" height="1414" 
+          fill="var(--la-page-bg)" 
+          stroke="var(--la-annotation-line)" 
+          stroke-width="var(--la-stroke-annotation)"/>
+    
+    <!-- Margin areas (if applicable) -->
+    <!-- <rect class="margin-area" ... /> -->
+    
+    <!-- Bleed areas (if applicable) -->
+    <!-- <rect class="bleed-area" fill="var(--la-bleed)" ... /> -->
+  </g>
+
+  <!-- LAYER 2: Grid System -->
+  <g id="layer-grid" data-layer="grid">
+    <!-- Vertical grid lines (columns) -->
+    <!-- <line class="grid-line-major" x1="..." y1="..." x2="..." y2="..." 
+              stroke="var(--la-grid-line-major)" 
+              stroke-width="var(--la-stroke-grid)"/> -->
+    
+    <!-- Horizontal grid lines (rows/baselines) if detected -->
+    <!-- <line class="grid-line" ... /> -->
+    
+    <!-- Gutter areas -->
+    <!-- <rect class="gutter" fill="var(--la-gutter)" ... /> -->
+    
+    <!-- Column width labels -->
+    <!-- <text class="column-label" x="..." y="..." 
+              font-family="var(--la-font-annotation)" 
+              font-size="var(--la-font-size-dimension)"
+              fill="var(--la-annotation-text)">23.5%</text> -->
+  </g>
+
+  <!-- LAYER 3: Content Blocks -->
+  <g id="layer-content" data-layer="content">
+    <!-- Content rectangles with type-based fills -->
+    <!-- <rect class="content-block" x="..." y="..." width="..." height="..."
+              fill="var(--la-text-heading)" 
+              fill-opacity="var(--la-fill-opacity)"
+              stroke="var(--la-text-heading)" 
+              stroke-width="var(--la-stroke-element)"
+              stroke-opacity="var(--la-stroke-opacity)"/> -->
+    
+    <!-- Content labels -->
+    <!-- <text class="content-label" x="..." y="..." 
+              font-family="var(--la-font-annotation)" 
+              font-size="var(--la-font-size-label)"
+              fill="var(--la-annotation-text)">Heading</text> -->
+  </g>
+
+  <!-- LAYER 4: Flow & Direction -->
+  <g id="layer-flow" data-layer="flow">
+    <!-- Reading direction arrows -->
+    <!-- <path d="M ... L ..." stroke="var(--la-direction-vector)" 
+              stroke-width="2" marker-end="url(#arrowhead)"/> -->
+    
+    <!-- Visual hierarchy vectors -->
+    <!-- Entry point indicator -->
+    <!-- <circle cx="..." cy="..." r="4" fill="var(--la-direction-vector)"/> -->
+  </g>
+
+  <!-- LAYER 5: Annotations -->
+  <g id="layer-annotations" data-layer="annotations">
+    <!-- Dimension lines -->
+    <!-- <line class="dimension-line" x1="..." y1="..." x2="..." y2="..." 
+              stroke="var(--la-dimension-line)" 
+              stroke-width="var(--la-stroke-dimension)"/> -->
+    
+    <!-- Alignment indicators -->
+    <!-- <line class="alignment-line" x1="..." y1="..." x2="..." y2="..." 
+              stroke="var(--la-alignment-line)" 
+              stroke-width="var(--la-stroke-annotation)" 
+              stroke-dasharray="2,2"/> -->
+    
+    <!-- Measurement labels -->
+    <!-- <text class="measurement-label" ... >15.2%</text> -->
+  </g>
+
+  <!-- LAYER 6: Legend -->
+  <g id="layer-legend" data-layer="legend" transform="translate(20, 1350)">
+    <!-- Color legend - consistent placement bottom-left -->
+    <rect x="0" y="0" width="300" height="40" fill="white" stroke="var(--la-annotation-line)" stroke-width="0.5"/>
+    
+    <!-- Legend items - example structure -->
+    <!-- <rect x="10" y="10" width="12" height="12" fill="var(--la-text-heading)"/>
+    <text x="26" y="20" font-family="var(--la-font-annotation)" 
+          font-size="8" fill="var(--la-annotation-text)">Heading</text> -->
+  </g>
+
+</svg>

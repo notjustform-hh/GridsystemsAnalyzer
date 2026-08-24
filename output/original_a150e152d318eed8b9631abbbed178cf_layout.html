@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO A-Series Paper Size Chart Diagram</title>
+    <link rel="stylesheet" href="../shared/tokens.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            background: var(--la-page-bg);
+            line-height: 1.3;
+            color: #000;
+        }
+        
+        .diagram-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            height: 1000px;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
+            border: 2px solid #ddd;
+        }
+        
+        .diagram-header {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            font-weight: bold;
+            color: #FF00FF;
+            text-align: center;
+        }
+        
+        /* Main proportional diagram area */
+        .main-diagram {
+            position: absolute;
+            top: 70px;
+            left: 70px;
+            width: 1260px;
+            height: 860px;
+            border: 2px solid #00CED1;
+            display: grid;
+            grid-template-columns: 840px 380px; /* Diagram | Table */
+            gap: 30px;
+        }
+        
+        /* A0 master rectangle area */
+        .a0-master {
+            position: relative;
+            border: 2px solid #00CED1;
+            background: rgba(0, 206, 209, 0.05);
+        }
+        
+        .a0-label {
+            position: absolute;
+            top: -20px;
+            left: 5px;
+            font-size: 9px;
+            font-weight: bold;
+            color: #00CED1;
+        }
+        
+        /* A0 rectangle - 841×594px scaled */
+        .a0-rectangle {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 840px;
+            height: 594px;
+            border: 2px solid #00CED1;
+        }
+        
+        /* A1 rectangle - right half of A0 */
+        .a1-rectangle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 420px;
+            height: 297px;
+            border: 2px solid #FF4444;
+            background: rgba(255, 68, 68, 0.1);
+        }
+        
+        .a1-label {
+            position: absolute;
+            top: -15px;
+            left: 5px;
+            font-size: 8px;
+            font-weight: bold;
+            color: #FF4444;
+        }
+        
+        /* A2 rectangle - left half of A0 */
+        .a2-rectangle {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 420px;
+            height: 297px;
+            border: 2px solid #FF4444;
+            background: rgba(255, 68, 68, 0.1);
+        }
+        
+        .a2-label {
+            position: absolute;
+            top: -15px;
+            left: 5px;
+            font-size: 8px;
+            font-weight: bold;
+            color: #FF4444;
+        }
+        
+        /* A3 rectangle - bottom half of A2 */
+        .a3-rectangle {
+            position: absolute;
+            top: 297px;
+            left: 20px;
+            width: 210px;
+            height: 297px;
+            border: 2px solid #FF4444;
+            background: rgba(255, 68, 68, 0.15);
+        }
+        
+        .a3-label {
+            position: absolute;
+            top: -15px;
+            left: 5px;
+            font-size: 8px;
+            font-weight: bold;
+            color: #FF4444;
+        }
+        
+        /* A4 rectangle - standard size */
+        .a4-rectangle {
+            position: absolute;
+            top: 446px;
+            left: 230px;
+            width: 148px;
+            height: 148px;
+            border: 2px solid #FF4444;
+            background: rgba(255, 68, 68, 0.2);
+        }
+        
+        .a4-label {
+            position: absolute;
+            top: -15px;
+            left: 5px;
+            font-size: 7px;
+            color: #FF4444;
+        }
+        
+        /* A5 rectangle */
+        .a5-rectangle {
+            position: absolute;
+            top: 297px;
+            left: 230px;
+            width: 105px;
+            height: 148px;
+            border: 2px solid #FF4444;
+            background: rgba(255, 68, 68, 0.2);
+        }
+        
+        .a5-label {
+            position: absolute;
+            top: -15px;
+            left: 5px;
+            font-size: 7px;
+            color: #FF4444;
+        }
+        
+        /* A6 rectangle */
+        .a6-rectangle {
+            position: absolute;
+            top: 446px;
+            left: 335px;
+            width: 105px;
+            height: 74px;
+            border: 2px solid #FF4444;
+            background: rgba(255, 68, 68, 0.25);
+        }
+        
+        .a6-label {
+            position: absolute;
+            top: -15px;
+            left: 5px;
+            font-size: 7px;
+            color: #FF4444;
+        }
+        
+        /* A7 rectangle */
+        .a7-rectangle {
+            position: absolute;
+            top: 297px;
+            left: 335px;
+            width: 74px;
+            height: 105px;
+            border: 2px solid #FF4444;
+            background: rgba(255, 68, 68, 0.25);
+        }
+        
+        .a7-label {
+            position: absolute;
+            top: -15px;
+            left: 5px;
+            font-size: 6px;
+            color: #FF4444;
+        }
+        
+        /* A8 rectangle */
+        .a8-rectangle {
+            position: absolute;
+            top: 297px;
+            left: 409px;
+            width: 52px;
+            height: 74px;
+            border: 2px solid #FF4444;
+            background: rgba(255, 68, 68, 0.3);
+        }
+        
+        .a8-label {
+            position: absolute;
+            top: -15px;
+            left: 5px;
+            font-size: 6px;
+            color: #FF4444;
+        }
+        
+        /* Specifications table */
+        .specifications-table {
+            border: 2px solid #FF4444;
+            background: rgba(255, 68, 68, 0.05);
+            padding: 20px;
+            position: relative;
+        }
+        
+        .table-title {
+            position: absolute;
+            top: -15px;
+            left: 5px;
+            font-size: 9px;
+            font-weight: bold;
+            color: #FF4444;
+        }
+        
+        .table-headers {
+            display: grid;
+            grid-template-columns: 80px 120px 110px;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 7px;
+            font-weight: bold;
+            color: #FF4444;
+        }
+        
+        .table-row {
+            display: grid;
+            grid-template-columns: 80px 120px 110px;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 6px;
+            color: #FF4444;
+            border-bottom: 0.5px solid rgba(255, 68, 68, 0.3);
+            padding-bottom: 8px;
+        }
+        
+        /* Mathematical relationship indicators */
+        .ratio-line {
+            position: absolute;
+            top: 70px;
+            left: 590px;
+            width: 1px;
+            height: 860px;
+            background: repeating-linear-gradient(
+                to bottom,
+                #FFD700 0px,
+                #FFD700 2px,
+                transparent 2px,
+                transparent 4px
+            );
+        }
+        
+        .ratio-label {
+            position: absolute;
+            top: 90px;
+            left: 595px;
+            font-size: 8px;
+            color: #FFD700;
+            writing-mode: vertical-lr;
+        }
+        
+        /* A4 emphasis circle */
+        .a4-emphasis {
+            position: absolute;
+            top: 540px;
+            left: 295px;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #FFD700;
+            border-radius: 50%;
+            background: rgba(255, 215, 0, 0.7);
+        }
+        
+        .a4-emphasis-label {
+            position: absolute;
+            top: 565px;
+            left: 305px;
+            font-size: 8px;
+            color: #FFD700;
+        }
+        
+        /* Mathematical formula area */
+        .formula-area {
+            position: absolute;
+            bottom: 70px;
+            left: 70px;
+            width: 400px;
+            height: 80px;
+            border: 1px dashed #FFD700;
+            padding: 10px;
+            font-size: 8px;
+            color: #FFD700;
+        }
+        
+        /* Layout Analysis Panel - Floating Box */
+        .layer-demo {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 12px;
+            font-family: monospace;
+            font-size: 10px;
+            border-radius: 4px;
+            max-width: 300px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .diagram-container {
+                height: auto;
+                max-width: 100%;
+                padding: 20px;
+            }
+            
+            .main-diagram {
+                position: static;
+                display: block;
+                width: 100%;
+                height: auto;
+                border: none;
+            }
+            
+            .a0-master {
+                position: static;
+                margin: 20px 0;
+                height: 300px;
+                border: 2px solid #00CED1;
+            }
+            
+            .a0-rectangle,
+            .a1-rectangle,
+            .a2-rectangle,
+            .a3-rectangle,
+            .a4-rectangle,
+            .a5-rectangle,
+            .a6-rectangle,
+            .a7-rectangle,
+            .a8-rectangle {
+                position: static;
+                margin: 10px;
+                width: calc(100% - 20px);
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: bold;
+            }
+            
+            .specifications-table {
+                position: static;
+                margin: 20px 0;
+                font-size: 12px;
+            }
+            
+            .table-headers,
+            .table-row {
+                display: block;
+                margin-bottom: 15px;
+            }
+            
+            .ratio-line,
+            .ratio-label,
+            .a4-emphasis,
+            .a4-emphasis-label,
+            .formula-area {
+                display: none;
+            }
+            
+            /* LOST IN RESPONSIVE: 
+               - Mathematical √2 proportional relationships completely obscured
+               - Nested rectangle proportions eliminated - educational value lost
+               - Visual size comparisons impossible - can't see relative scaling
+               - Specifications table loses spatial connection to visual elements
+               - Technical precision measurement indicators removed
+               - Golden ratio analysis and proportional markers eliminated
+               - Professional reference functionality severely compromised
+               - ISO standard demonstration reduced to basic list format */
+        }
+    </style>
+</head>
+<body>
+    <div class="diagram-container">
+        <div class="diagram-header">
+            ISO A-SERIES PAPER SIZE CHART: 1400 × 1000px (Technical Diagram)
+        </div>
+        
+        <div class="main-diagram">
+            <!-- Main proportional diagram area -->
+            <div class="a0-master">
+                <div class="a0-label">A0 MASTER SIZE (841×1189mm)</div>
+                
+                <!-- A0 rectangle containing all subdivisions -->
+                <div class="a0-rectangle">
+                    
+                    <!-- A1 rectangle (right half) -->
+                    <div class="a1-rectangle">
+                        <div class="a1-label">A1 (594×841mm)</div>
+                    </div>
+                    
+                    <!-- A2 rectangle (left half) -->
+                    <div class="a2-rectangle">
+                        <div class="a2-label">A2 (420×594mm)</div>
+                        
+                        <!-- A3 rectangle -->
+                        <div class="a3-rectangle">
+                            <div class="a3-label">A3 (297×420mm)</div>
+                            
+                            <!-- A4 rectangle -->
+                            <div class="a4-rectangle">
+                                <div class="a4-label">A4</div>
+                            </div>
+                            
+                            <!-- A5 rectangle -->
+                            <div class="a5-rectangle">
+                                <div class="a5-label">A5</div>
+                            </div>
+                            
+                            <!-- A6 rectangle -->
+                            <div class="a6-rectangle">
+                                <div class="a6-label">A6</div>
+                            </div>
+                            
+                            <!-- A7 rectangle -->
+                            <div class="a7-rectangle">
+                                <div class="a7-label">A7</div>
+                            </div>
+                            
+                            <!-- A8 rectangle -->
+                            <div class="a8-rectangle">
+                                <div class="a8-label">A8</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Specifications table -->
+            <div class="specifications-table">
+                <div class="table-title">SIZE SPECIFICATIONS</div>
+                
+                <div class="table-headers">
+                    <div>SIZE</div>
+                    <div>DIMENSIONS (mm)</div>
+                    <div>RATIO</div>
+                </div>
+                
+                <div class="table-row">
+                    <div>A0</div>
+                    <div>841 × 1189 mm</div>
+                    <div>√2 : 1</div>
+                </div>
+                
+                <div class="table-row">
+                    <div>A1</div>
+                    <div>594 × 841 mm</div>
+                    <div>√2 : 1</div>
+                </div>
+                
+                <div class="table-row">
+                    <div>A2</div>
+                    <div>420 × 594 mm</div>
+                    <div>√2 : 1</div>
+                </div>
+                
+                <div class="table-row">
+                    <div>A3</div>
+                    <div>297 × 420 mm</div>
+                    <div>√2 : 1</div>
+                </div>
+                
+                <div class="table-row">
+                    <div>A4</div>
+                    <div>210 × 297 mm</div>
+                    <div>√2 : 1</div>
+                </div>
+                
+                <div style="margin-top: 20px; font-size: 6px; color: #666;">
+                    A4-A10 REMAINING SIZES<br>
+                    Each size = previous ÷ √2<br>
+                    Maintains aspect ratio
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mathematical relationship indicators -->
+        <div class="ratio-line"></div>
+        <div class="ratio-label">√2 Ratio Division</div>
+        
+        <!-- A4 proportional emphasis -->
+        <div class="a4-emphasis"></div>
+        <div class="a4-emphasis-label">√2 Proportion</div>
+        
+        <!-- Mathematical formula area -->
+        <div class="formula-area">
+            Mathematical Relationship: Each size = previous ÷ √2<br>
+            Aspect ratio maintained: 1 : √2 ≈ 1 : 1.414<br>
+            ISO international standard for paper dimensions
+        </div>
+    </div>
+    
+    <!-- Layout Analysis Panel - Floating Box -->
+    <div class="layer-demo">
+        <div><strong>LAYOUT ANALYSIS - ISO A-SERIES PAPER CHART</strong></div>
+        <div style="margin-top: 8px;">
+            <div><strong>Grid System:</strong></div>
+            <div>Nested proportional rectangles</div>
+            <div>√2 mathematical relationships</div>
+        </div>
+        <div style="margin-top: 8px;">
+            <div><strong>Proportions:</strong></div>
+            <div>1.4:1 diagram ratio ≈ φ | Technical format</div>
+            <div>A0 master with progressive subdivisions</div>
+        </div>
+        <div style="margin-top: 8px; border-top: 1px solid #666; padding-top: 8px;">
+            <strong>Key Insight:</strong> Mathematical precision<br>
+            ISO standard demonstration with √2 system<br>
+            <strong>Challenge:</strong> Proportional relationships lost on mobile
+        </div>
+    </div>
+</body>
+</html>

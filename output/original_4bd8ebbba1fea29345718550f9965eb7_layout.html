@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruno Monguzzi Portfolio - Magazine Spread</title>
+    <link rel="stylesheet" href="../shared/tokens.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: var(--la-page-bg);
+            line-height: 1.3;
+            color: #000;
+        }
+        
+        .spread-container {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 850px 20px 850px; /* Left page | Spine | Right page */
+            height: 1200px;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* LEFT PAGE */
+        .page-left {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 390px 380px;
+            grid-template-rows: 40px 400px 300px 40px; /* Header | Geometric | Architecture/Text | Footer */
+            gap: 20px;
+            position: relative;
+        }
+        
+        /* RIGHT PAGE */
+        .page-right {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 440px 230px;
+            grid-template-rows: 40px 700px 40px; /* Header | Main content | Footer */
+            gap: 20px;
+            position: relative;
+        }
+        
+        /* HEADERS */
+        .header-left {
+            grid-column: 1 / -1;
+            grid-row: 1;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 40px;
+            font-size: 11px;
+            font-weight: bold;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .header-right {
+            grid-column: 1 / -1;
+            grid-row: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            font-weight: bold;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* LEFT PAGE CONTENT */
+        .geometric-area {
+            grid-column: 1 / -1;
+            grid-row: 2;
+            position: relative;
+            background: #fafafa;
+        }
+        
+        .geometric-shape-1 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 300px;
+            height: 180px;
+            background: #000;
+            transform: skew(-15deg);
+        }
+        
+        .geometric-shape-2 {
+            position: absolute;
+            top: 60px;
+            right: 50px;
+            width: 280px;
+            height: 160px;
+            background: #000;
+            transform: rotate(5deg);
+        }
+        
+        .project-title {
+            position: absolute;
+            bottom: 40px;
+            left: 70px;
+            font-size: 32px;
+            font-weight: 300;
+            color: #000;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+        
+        .architecture-image {
+            grid-column: 1;
+            grid-row: 3;
+            background: 
+                linear-gradient(45deg, #f0f0f0 25%, transparent 25%),
+                linear-gradient(-45deg, #f0f0f0 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #f0f0f0 75%),
+                linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .project-description {
+            grid-column: 2;
+            grid-row: 3;
+            padding: 20px;
+            font-size: 10px;
+            line-height: 1.4;
+            color: #000;
+            background: #f8f8f8;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .description-section {
+            margin-bottom: 15px;
+        }
+        
+        .description-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-size: 8px;
+            letter-spacing: 0.5px;
+            color: #333;
+        }
+        
+        .description-content {
+            font-weight: 300;
+            line-height: 1.3;
+        }
+        
+        /* RIGHT PAGE CONTENT */
+        .portrait-area {
+            grid-column: 1;
+            grid-row: 2;
+            position: relative;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(0,0,0,0.1) 0%, transparent 50%),
+                linear-gradient(135deg, #f5f5f5, #e8e8e8);
+            border: 2px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .content-sidebar {
+            grid-column: 2;
+            grid-row: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .project-header {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+        }
+        
+        .dot-grid-pattern {
+            height: 340px;
+            background-image: 
+                radial-gradient(circle at center, #000 2px, transparent 2px);
+            background-size: 20px 20px;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+        
+        .grid-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            border: 2px solid #000;
+        }
+        
+        .project-info {
+            background: #f0f0f0;
+            padding: 15px;
+            border: 1px solid #ccc;
+            font-size: 8px;
+            line-height: 1.4;
+        }
+        
+        .info-section {
+            margin-bottom: 10px;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            font-size: 7px;
+            letter-spacing: 0.5px;
+            color: #333;
+        }
+        
+        .info-content {
+            font-weight: 300;
+            line-height: 1.3;
+        }
+        
+        /* FOOTERS */
+        .footer-left {
+            grid-column: 1;
+            grid-row: 4;
+            align-self: end;
+            justify-self: start;
+            font-size: 10px;
+            color: #999;
+        }
+        
+        .footer-right {
+            grid-column: 2;
+            grid-row: 3;
+            align-self: end;
+            justify-self: end;
+            font-size: 10px;
+            color: #999;
+        }
+        
+        /* SPINE */
+        .spine {
+            background: var(--la-gutter);
+            position: relative;
+        }
+        
+        /* Layout Analysis Panel - Floating Box */
+        .layer-demo {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 12px;
+            font-family: monospace;
+            font-size: 10px;
+            border-radius: 4px;
+            max-width: 300px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .spread-container {
+                display: block;
+                height: auto;
+                max-width: 100%;
+                padding: 20px;
+            }
+            
+            .page-left,
+            .page-right {
+                display: block;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .header-left,
+            .header-right {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 30px;
+                font-size: 12px;
+            }
+            
+            .geometric-area {
+                height: 300px;
+                margin-bottom: 30px;
+                overflow: hidden;
+            }
+            
+            .geometric-shape-1,
+            .geometric-shape-2 {
+                width: 200px;
+                height: 120px;
+                position: relative;
+                margin: 20px auto;
+                transform: none;
+            }
+            
+            .project-title {
+                position: static;
+                text-align: center;
+                margin: 20px 0;
+                font-size: 24px;
+            }
+            
+            .architecture-image {
+                height: 200px;
+                margin: 20px 0;
+                font-size: 16px;
+            }
+            
+            .project-description {
+                margin: 20px 0;
+                font-size: 14px;
+                padding: 20px;
+            }
+            
+            .portrait-area {
+                height: 400px;
+                margin: 20px 0;
+                font-size: 20px;
+            }
+            
+            .content-sidebar {
+                margin: 20px 0;
+            }
+            
+            .project-header {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .dot-grid-pattern {
+                height: 200px;
+                margin: 20px 0;
+                background-size: 15px 15px;
+            }
+            
+            .grid-overlay {
+                font-size: 14px;
+                padding: 15px;
+            }
+            
+            .project-info {
+                font-size: 12px;
+                margin: 20px 0;
+                padding: 20px;
+            }
+            
+            .footer-left,
+            .footer-right {
+                text-align: center;
+                margin: 20px 0;
+                position: static;
+            }
+            
+            .spine {
+                display: none;
+            }
+            
+            /* LOST IN RESPONSIVE: 
+               - Sophisticated asymmetric layout becomes sequential blocks
+               - Geometric shapes lose proportional relationships and visual impact
+               - Swiss design precision eliminated - systematic spacing lost
+               - Portrait loses dramatic presence - side-by-side contrast broken
+               - Dot grid pattern overlay becomes ineffective at mobile scale
+               - Dual project presentation loses spatial relationship
+               - Editorial sophistication reduced to basic mobile content
+               - Magazine design approach simplified to standard mobile layout */
+        }
+    </style>
+</head>
+<body>
+    <div class="spread-container">
+        <!-- LEFT PAGE -->
+        <div class="page-left">
+            <div class="header-left">
+                <span>MAGAZINE MAGAZINE</span>
+                <span>14</span>
+            </div>
+            
+            <div class="geometric-area">
+                <div class="geometric-shape-1"></div>
+                <div class="geometric-shape-2"></div>
+                <div class="project-title">la luce in casa</div>
+            </div>
+            
+            <div class="architecture-image">
+                Architecture<br>
+                Photography
+            </div>
+            
+            <div class="project-description">
+                <div class="description-section">
+                    <div class="description-label">Project</div>
+                    <div class="description-content">
+                        Architectural lighting design for residential spaces. Contemporary approach to interior illumination emphasizing geometric forms and spatial relationships.
+                    </div>
+                </div>
+                
+                <div class="description-section">
+                    <div class="description-label">Approach</div>
+                    <div class="description-content">
+                        Integration of modernist design principles with functional lighting solutions. Systematic exploration of light, shadow, and architectural form.
+                    </div>
+                </div>
+                
+                <div class="description-section">
+                    <div class="description-label">Year</div>
+                    <div class="description-content">2003</div>
+                </div>
+            </div>
+            
+            <div class="footer-left">94</div>
+        </div>
+        
+        <!-- SPINE -->
+        <div class="spine"></div>
+        
+        <!-- RIGHT PAGE -->
+        <div class="page-right">
+            <div class="header-right">
+                <div>
+                    <span>MAGAZINE MAGAZINE</span>
+                    <span>14</span>
+                </div>
+                <span>GLOBAL IDENTITY</span>
+            </div>
+            
+            <div class="portrait-area">
+                Bruno Monguzzi<br>
+                Designer Portrait
+            </div>
+            
+            <div class="content-sidebar">
+                <div class="project-header">
+                    Eleven Posters
+                </div>
+                
+                <div class="dot-grid-pattern">
+                    <div class="grid-overlay">
+                        Systematic<br>
+                        Grid Pattern
+                    </div>
+                </div>
+                
+                <div class="project-info">
+                    <div class="info-section">
+                        <div class="info-label">Designer</div>
+                        <div class="info-content">Bruno Monguzzi, born in Mendrisio, Switzerland. Studied graphic design at AGS Basel under Armin Hofmann and Emil Ruder.</div>
+                    </div>
+                    
+                    <div class="info-section">
+                        <div class="info-label">Career</div>
+                        <div class="info-content">International design practice combining Swiss typography tradition with contemporary visual communication.</div>
+                    </div>
+                    
+                    <div class="info-section">
+                        <div class="info-label">Recognition</div>
+                        <div class="info-content">Awards from major design organizations. Work in permanent collections worldwide.</div>
+                    </div>
+                    
+                    <div class="info-section">
+                        <div class="info-label">Teaching</div>
+                        <div class="info-content">Professor at various design institutions. Influence on contemporary graphic design education.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-right">95</div>
+        </div>
+    </div>
+    
+    <!-- Layout Analysis Panel - Floating Box -->
+    <div class="layer-demo">
+        <div><strong>LAYOUT ANALYSIS - BRUNO MONGUZZI PORTFOLIO</strong></div>
+        <div style="margin-top: 8px;">
+            <div><strong>Grid System:</strong></div>
+            <div>Asymmetric Swiss design approach</div>
+            <div>Geometric abstraction + systematic content</div>
+        </div>
+        <div style="margin-top: 8px;">
+            <div><strong>Proportions:</strong></div>
+            <div>1.5:1 spread ratio ≈ φ | Editorial format</div>
+            <div>Portrait 24.4% × 55% dominates right page</div>
+        </div>
+        <div style="margin-top: 8px; border-top: 1px solid #666; padding-top: 8px;">
+            <strong>Key Insight:</strong> Swiss design methodology<br>
+            Designer portfolio with geometric emphasis<br>
+            <strong>Challenge:</strong> Asymmetric sophistication lost on mobile
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1800 1200" 
+     role="img" aria-label="Grid analysis: NewWork Magazine Hands Photography Spread with Red Lines">
+
+  <!-- LAYER 1: Page Frame & Margins -->
+  <g id="layer-page" data-layer="page">
+    <rect x="0" y="0" width="1800" height="1200" 
+          fill="none" stroke="#FF00FF" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="900" y="15" text-anchor="middle" fill="#FF00FF" 
+          font-family="monospace" font-size="12px" font-weight="bold">NEWWORK MAGAZINE HANDS SPREAD: 1800 × 1200px (Photography &amp; Geometry)</text>
+    
+    <!-- Page boundaries -->
+    <rect x="40" y="40" width="860" height="1120" 
+          fill="none" stroke="#FF00FF" stroke-width="1.5"/>
+    <text x="45" y="35" fill="#FF00FF" font-family="monospace" font-size="10px">LEFT PAGE</text>
+    
+    <rect x="900" y="40" width="860" height="1120" 
+          fill="none" stroke="#FF00FF" stroke-width="1.5"/>
+    <text x="1380" y="35" fill="#FF00FF" font-family="monospace" font-size="10px">RIGHT PAGE</text>
+    
+    <!-- Central spine/gutter -->
+    <rect x="860" y="0" width="40" height="1200" fill="none" stroke="#FF00FF" stroke-width="2"/>
+    <text x="870" y="25" fill="#FF00FF" font-family="monospace" font-size="8px" transform="rotate(90 870 25)">SPINE</text>
+    
+    <!-- Working margins -->
+    <rect x="80" y="80" width="780" height="1040" 
+          fill="none" stroke="#8B0000" stroke-width="1" stroke-dasharray="3,3"/>
+    <rect x="940" y="80" width="780" height="1040" 
+          fill="none" stroke="#8B0000" stroke-width="1" stroke-dasharray="3,3"/>
+  </g>
+
+  <!-- LAYER 2: Grid System -->
+  <g id="layer-grid" data-layer="grid">
+    <!-- Photography area -->
+    <rect x="100" y="100" width="1600" height="1000" fill="none" stroke="#00CED1" stroke-width="2"/>
+    <text x="105" y="95" fill="#00CED1" font-family="monospace" font-size="9px" font-weight="bold">MAIN PHOTOGRAPHY AREA</text>
+    
+    <!-- Left credits area -->
+    <rect x="100" y="680" width="300" height="320" fill="none" stroke="#00CED1" stroke-width="1"/>
+    <text x="105" y="675" fill="#00CED1" font-family="monospace" font-size="8px">LEFT CREDITS ZONE</text>
+    
+    <!-- Center credits area -->
+    <rect x="520" y="680" width="300" height="320" fill="none" stroke="#00CED1" stroke-width="1"/>
+    <text x="525" y="675" fill="#00CED1" font-family="monospace" font-size="8px">CENTER CREDITS ZONE</text>
+    
+    <!-- Right branding area -->
+    <rect x="1400" y="300" width="280" height="400" fill="none" stroke="#00CED1" stroke-width="1.5"/>
+    <text x="1405" y="295" fill="#00CED1" font-family="monospace" font-size="8px">RIGHT BRANDING ZONE</text>
+    
+    <!-- Header areas -->
+    <line x1="100" y1="120" x2="860" y2="120" stroke="#00CED1" stroke-width="0.5"/>
+    <line x1="940" y1="120" x2="1700" y2="120" stroke="#00CED1" stroke-width="0.5"/>
+    <text x="105" y="110" fill="#00CED1" font-family="monospace" font-size="8px">HEADER LINES</text>
+    
+    <!-- Footer areas -->
+    <line x1="100" y1="1080" x2="860" y2="1080" stroke="#00CED1" stroke-width="0.5"/>
+    <line x1="940" y1="1080" x2="1700" y2="1080" stroke="#00CED1" stroke-width="0.5"/>
+    <text x="105" y="1100" fill="#00CED1" font-family="monospace" font-size="8px">FOOTER LINES</text>
+  </g>
+
+  <!-- LAYER 3: Content Blocks -->
+  <g id="layer-content" data-layer="content">
+    <!-- Large hands photography -->
+    <rect x="120" y="140" width="1560" height="860" fill="none" stroke="#FF4444" stroke-width="4"/>
+    <text x="125" y="135" fill="#FF4444" font-family="monospace" font-size="9px" font-weight="bold">LARGE HANDS PHOTOGRAPHY</text>
+    
+    <!-- Individual hand elements -->
+    <rect x="150" y="180" width="200" height="280" fill="none" stroke="#FF4444" stroke-width="2"/>
+    <text x="155" y="175" fill="#FF4444" font-family="monospace" font-size="7px">LEFT HAND</text>
+    
+    <rect x="1450" y="180" width="180" height="250" fill="none" stroke="#FF4444" stroke-width="2"/>
+    <text x="1455" y="175" fill="#FF4444" font-family="monospace" font-size="7px">TOP RIGHT HAND</text>
+    
+    <rect x="900" y="700" width="180" height="220" fill="none" stroke="#FF4444" stroke-width="2"/>
+    <text x="905" y="695" fill="#FF4444" font-family="monospace" font-size="7px">BOTTOM HANDS</text>
+    
+    <!-- Red geometric lines -->
+    <line x1="250" y1="600" x2="900" y2="200" stroke="#FF0000" stroke-width="3"/>
+    <text x="450" y="390" fill="#FF0000" font-family="monospace" font-size="8px" transform="rotate(-25 450 390)">RED GEOMETRIC LINE</text>
+    
+    <line x1="900" y1="200" x2="1550" y2="450" stroke="#FF0000" stroke-width="3"/>
+    <text x="1200" y="320" fill="#FF0000" font-family="monospace" font-size="8px" transform="rotate(20 1200 320)">RED GEOMETRIC LINE</text>
+    
+    <line x1="580" y1="850" x2="1200" y2="450" stroke="#FF0000" stroke-width="3"/>
+    <text x="890" y="650" fill="#FF0000" font-family="monospace" font-size="8px" transform="rotate(-35 890 650)">RED GEOMETRIC LINE</text>
+    
+    <!-- Left credits -->
+    <rect x="120" y="700" width="260" height="280" fill="none" stroke="#FF4444" stroke-width="1.5"/>
+    <text x="125" y="695" fill="#FF4444" font-family="monospace" font-size="8px">LEFT CREDITS TEXT</text>
+    
+    <!-- Center credits -->
+    <rect x="540" y="700" width="260" height="280" fill="none" stroke="#FF4444" stroke-width="1.5"/>
+    <text x="545" y="695" fill="#FF4444" font-family="monospace" font-size="8px">CENTER CREDITS TEXT</text>
+    
+    <!-- NewWork Magazine branding -->
+    <rect x="1420" y="320" width="240" height="360" fill="none" stroke="#FF4444" stroke-width="3"/>
+    <text x="1425" y="315" fill="#FF4444" font-family="monospace" font-size="9px" font-weight="bold">"NEWWORK MAGAZINE"</text>
+    
+    <!-- Contact/issue info -->
+    <rect x="1520" y="780" width="140" height="120" fill="none" stroke="#FF4444" stroke-width="1"/>
+    <text x="1525" y="775" fill="#FF4444" font-family="monospace" font-size="7px">CONTACT INFO</text>
+    
+    <rect x="1520" y="920" width="140" height="80" fill="none" stroke="#FF4444" stroke-width="1"/>
+    <text x="1525" y="915" fill="#FF4444" font-family="monospace" font-size="7px">ISSUE INFO</text>
+    
+    <!-- Page numbers -->
+    <rect x="100" y="1120" width="40" height="20" fill="none" stroke="#FF4444" stroke-width="1"/>
+    <text x="105" y="1115" fill="#FF4444" font-family="monospace" font-size="6px">LEFT PAGE</text>
+    
+    <rect x="1660" y="1120" width="40" height="20" fill="none" stroke="#FF4444" stroke-width="1"/>
+    <text x="1665" y="1115" fill="#FF4444" font-family="monospace" font-size="6px">RIGHT PAGE</text>
+  </g>
+
+  <!-- LAYER 4: Proportional Analysis -->
+  <g id="layer-proportions" data-layer="proportions">
+    <!-- Golden ratio divisions -->
+    <line x1="693" y1="80" x2="693" y2="1120" stroke="#FFD700" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="698" y="100" fill="#FFD700" font-family="monospace" font-size="8px">φ Left: 38.5%</text>
+    
+    <line x1="1107" y1="80" x2="1107" y2="1120" stroke="#FFD700" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="1112" y="100" fill="#FFD700" font-family="monospace" font-size="8px">φ Right: 61.5%</text>
+    
+    <!-- Photography zone proportional analysis -->
+    <rect x="120" y="140" width="1560" height="860" fill="none" stroke="#FFD700" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="125" y="1010" fill="#FFD700" font-family="monospace" font-size="8px">Photo area: 86.7% × 71.7%</text>
+    
+    <!-- Red lines geometric analysis -->
+    <circle cx="900" cy="200" r="12" fill="#FFD700" opacity="0.7"/>
+    <text x="915" y="205" fill="#FFD700" font-family="monospace" font-size="8px">Convergence point</text>
+    
+    <!-- Central proportional marker -->
+    <circle cx="900" cy="600" r="8" fill="#FFD700" opacity="0.7"/>
+    <text x="910" y="605" fill="#FFD700" font-family="monospace" font-size="8px">Center</text>
+  </g>
+
+  <!-- LAYER 5: Flow & Hierarchy -->
+  <g id="layer-flow" data-layer="flow">
+    <!-- Visual flow following red lines -->
+    <circle cx="250" cy="600" r="12" fill="#8844CC" opacity="0.8"/>
+    <text x="245" y="605" fill="white" font-family="monospace" font-size="9px" font-weight="bold">1</text>
+    
+    <circle cx="900" cy="200" r="14" fill="#8844CC" opacity="0.9"/>
+    <text x="893" y="207" fill="white" font-family="monospace" font-size="10px" font-weight="bold">2</text>
+    
+    <circle cx="1550" cy="450" r="10" fill="#8844CC" opacity="0.7"/>
+    <text x="1547" y="455" fill="white" font-family="monospace" font-size="8px" font-weight="bold">3</text>
+    
+    <circle cx="1540" cy="500" r="12" fill="#8844CC" opacity="0.8"/>
+    <text x="1535" y="505" fill="white" font-family="monospace" font-size="9px" font-weight="bold">4</text>
+    
+    <circle cx="250" cy="850" r="8" fill="#8844CC" opacity="0.6"/>
+    <text x="247" y="855" fill="white" font-family="monospace" font-size="7px" font-weight="bold">5</text>
+    
+    <!-- Flow arrows following red geometric lines -->
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+              refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#8844CC"/>
+      </marker>
+    </defs>
+    
+    <path d="M 262 600 Q 550 400 888 200" fill="none" stroke="#8844CC" 
+          stroke-width="3" marker-end="url(#arrowhead)" opacity="0.8"/>
+    <path d="M 914 200 Q 1200 300 1538 450" fill="none" stroke="#8844CC" 
+          stroke-width="2" marker-end="url(#arrowhead)" opacity="0.7"/>
+    <path d="M 900 214 Q 1300 350 1528 500" fill="none" stroke="#8844CC" 
+          stroke-width="2" marker-end="url(#arrowhead)" opacity="0.7"/>
+  </g>
+
+  <!-- LAYER 6: Info Panel -->
+  <g id="layer-info" data-layer="info">
+    <rect x="0" y="1200" width="1800" height="200" fill="#1a1a1a"/>
+    
+    <text x="20" y="1225" fill="white" font-family="monospace" font-size="14px" font-weight="bold">GRID ANALYSIS — NEWWORK MAGAZINE HANDS PHOTOGRAPHY SPREAD</text>
+    
+    <text x="20" y="1245" fill="#FFD700" font-family="monospace" font-size="10px">FORMAT:</text>
+    <text x="120" y="1245" fill="white" font-family="monospace" font-size="10px">1800×1200px double-page spread | Photography editorial | Geometric overlay design</text>
+    
+    <text x="20" y="1260" fill="#00CED1" font-family="monospace" font-size="10px">LAYOUT:</text>
+    <text x="120" y="1260" fill="white" font-family="monospace" font-size="10px">Full-bleed hands photography | Red geometric lines overlay | Credits zones + right branding</text>
+    
+    <text x="20" y="1275" fill="#FF4444" font-family="monospace" font-size="10px">VISUAL:</text>
+    <text x="120" y="1275" fill="white" font-family="monospace" font-size="10px">Black &amp; white hands photography | Red geometric line system | "NEWWORK MAGAZINE" vertical</text>
+    
+    <text x="20" y="1290" fill="#8844CC" font-family="monospace" font-size="10px">HIERARCHY:</text>
+    <text x="120" y="1290" fill="white" font-family="monospace" font-size="10px">1. Red line convergence | 2. Central convergence | 3. Right endpoint | 4. Magazine brand | 5. Credits</text>
+    
+    <text x="20" y="1330" fill="#FFD700" font-family="monospace" font-size="9px">OBSERVATIONS:</text>
+    <text x="20" y="1345" fill="white" font-family="monospace" font-size="9px">Photography-geometry integration | Red lines create visual movement across spread</text>
+    <text x="20" y="1358" fill="white" font-family="monospace" font-size="9px">Hands theme with geometric overlay | Full-bleed editorial photography approach</text>
+    <text x="20" y="1371" fill="white" font-family="monospace" font-size="9px">Contemporary magazine design | Color accent on monochrome photography</text>
+  </g>
+
+</svg>

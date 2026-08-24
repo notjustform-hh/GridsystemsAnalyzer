@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1600 1100" 
+     role="img" aria-label="Grid analysis: Spanish Space-Time Theory Double-Page Spread">
+
+  <!-- LAYER 1: Page Frame & Margins -->
+  <g id="layer-page" data-layer="page">
+    <rect x="0" y="0" width="1600" height="1100" 
+          fill="none" stroke="#FF00FF" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="800" y="15" text-anchor="middle" fill="#FF00FF" 
+          font-family="monospace" font-size="12px" font-weight="bold">DOUBLE-PAGE SPREAD: 1600 × 1100px (Spanish Philosophy)</text>
+    
+    <!-- Page boundaries -->
+    <rect x="60" y="60" width="720" height="980" 
+          fill="none" stroke="#FF00FF" stroke-width="1.5"/>
+    <text x="65" y="55" fill="#FF00FF" font-family="monospace" font-size="10px">LEFT PAGE</text>
+    
+    <rect x="820" y="60" width="720" height="980" 
+          fill="none" stroke="#FF00FF" stroke-width="1.5"/>
+    <text x="1180" y="55" fill="#FF00FF" font-family="monospace" font-size="10px">RIGHT PAGE</text>
+    
+    <!-- Central spine/gutter -->
+    <rect x="780" y="0" width="40" height="1100" fill="none" stroke="#FF00FF" stroke-width="2"/>
+    <text x="790" y="30" fill="#FF00FF" font-family="monospace" font-size="8px" transform="rotate(90 790 30)">SPINE</text>
+    
+    <!-- Working margins -->
+    <rect x="100" y="100" width="640" height="900" 
+          fill="none" stroke="#8B0000" stroke-width="1" stroke-dasharray="3,3"/>
+    <rect x="860" y="100" width="640" height="900" 
+          fill="none" stroke="#8B0000" stroke-width="1" stroke-dasharray="3,3"/>
+  </g>
+
+  <!-- LAYER 2: Grid System -->
+  <g id="layer-grid" data-layer="grid">
+    <!-- LEFT PAGE: Typography zones -->
+    <rect x="120" y="140" width="600" height="320" fill="none" stroke="#00CED1" stroke-width="2"/>
+    <text x="125" y="135" fill="#00CED1" font-family="monospace" font-size="9px" font-weight="bold">LARGE TYPOGRAPHY ZONE</text>
+    
+    <rect x="120" y="480" width="600" height="240" fill="none" stroke="#00CED1" stroke-width="1.5"/>
+    <text x="125" y="475" fill="#00CED1" font-family="monospace" font-size="9px" font-weight="bold">SECONDARY TEXT ZONE</text>
+    
+    <rect x="120" y="740" width="600" height="200" fill="none" stroke="#00CED1" stroke-width="1"/>
+    <text x="125" y="735" fill="#00CED1" font-family="monospace" font-size="9px" font-weight="bold">BODY TEXT ZONE</text>
+    
+    <!-- RIGHT PAGE: Column grid -->
+    <line x1="1040" y1="140" x2="1040" y2="900" stroke="#00CED1" stroke-width="1"/>
+    <text x="1045" y="135" fill="#00CED1" font-family="monospace" font-size="8px">COL DIVIDE</text>
+    
+    <line x1="1220" y1="140" x2="1220" y2="900" stroke="#00CED1" stroke-width="1"/>
+    <text x="1225" y="135" fill="#00CED1" font-family="monospace" font-size="8px">COL DIVIDE</text>
+    
+    <!-- Horizontal zones on right -->
+    <line x1="880" y1="160" x2="1480" y2="160" stroke="#00CED1" stroke-width="0.5"/>
+    <line x1="880" y1="440" x2="1480" y2="440" stroke="#00CED1" stroke-width="0.5"/>
+    <line x1="880" y1="720" x2="1480" y2="720" stroke="#00CED1" stroke-width="0.5"/>
+  </g>
+
+  <!-- LAYER 3: Content Blocks -->
+  <g id="layer-content" data-layer="content">
+    <!-- LEFT PAGE: Large typography -->
+    <rect x="140" y="160" width="560" height="80" fill="none" stroke="#FF4444" stroke-width="3"/>
+    <text x="145" y="155" fill="#FF4444" font-family="monospace" font-size="9px" font-weight="bold">"EL ESPA-"</text>
+    
+    <rect x="140" y="260" width="560" height="120" fill="none" stroke="#FF4444" stroke-width="3"/>
+    <text x="145" y="255" fill="#FF4444" font-family="monospace" font-size="9px" font-weight="bold">"CIO Y"</text>
+    
+    <rect x="140" y="400" width="560" height="80" fill="none" stroke="#FF4444" stroke-width="3"/>
+    <text x="145" y="395" fill="#FF4444" font-family="monospace" font-size="9px" font-weight="bold">"TIEMPO."</text>
+    
+    <!-- Black text block on left -->
+    <rect x="250" y="290" width="200" height="40" fill="#FF4444" opacity="0.3"/>
+    <text x="255" y="285" fill="#FF4444" font-family="monospace" font-size="7px">BLACK OVERLAY TEXT</text>
+    
+    <!-- Secondary content on left -->
+    <rect x="140" y="500" width="280" height="60" fill="none" stroke="#FF4444" stroke-width="1.5"/>
+    <text x="145" y="495" fill="#FF4444" font-family="monospace" font-size="8px">"Teorías del espacio-tiempo"</text>
+    
+    <rect x="440" y="500" width="260" height="160" fill="none" stroke="#FF4444" stroke-width="1.5"/>
+    <text x="445" y="495" fill="#FF4444" font-family="monospace" font-size="8px">"Matemática General/"</text>
+    
+    <!-- Body text on left -->
+    <rect x="140" y="760" width="560" height="160" fill="none" stroke="#FF4444" stroke-width="1"/>
+    <text x="145" y="755" fill="#FF4444" font-family="monospace" font-size="8px">LEFT BODY TEXT</text>
+    
+    <!-- RIGHT PAGE: Text columns -->
+    <rect x="880" y="180" width="140" height="240" fill="none" stroke="#FF4444" stroke-width="1.5"/>
+    <text x="885" y="175" fill="#FF4444" font-family="monospace" font-size="8px">COL 1 TEXT</text>
+    
+    <rect x="1060" y="180" width="140" height="240" fill="none" stroke="#FF4444" stroke-width="1.5"/>
+    <text x="1065" y="175" fill="#FF4444" font-family="monospace" font-size="8px">COL 2 TEXT</text>
+    
+    <rect x="1240" y="180" width="220" height="240" fill="none" stroke="#FF4444" stroke-width="1.5"/>
+    <text x="1245" y="175" fill="#FF4444" font-family="monospace" font-size="8px">COL 3 TEXT</text>
+    
+    <!-- Lower text blocks right -->
+    <rect x="880" y="460" width="140" height="240" fill="none" stroke="#FF4444" stroke-width="1"/>
+    <rect x="1060" y="460" width="140" height="240" fill="none" stroke="#FF4444" stroke-width="1"/>
+    <rect x="1240" y="460" width="220" height="240" fill="none" stroke="#FF4444" stroke-width="1"/>
+    
+    <!-- Bottom text blocks right -->
+    <rect x="880" y="740" width="140" height="160" fill="none" stroke="#FF4444" stroke-width="1"/>
+    <rect x="1060" y="740" width="140" height="160" fill="none" stroke="#FF4444" stroke-width="1"/>
+    <rect x="1240" y="740" width="220" height="160" fill="none" stroke="#FF4444" stroke-width="1"/>
+    
+    <!-- Diagrams/figures on right -->
+    <rect x="1280" y="620" width="160" height="80" fill="none" stroke="#FF4444" stroke-width="2"/>
+    <text x="1285" y="615" fill="#FF4444" font-family="monospace" font-size="7px">DIAGRAM</text>
+    
+    <!-- Page numbers -->
+    <rect x="120" y="1020" width="40" height="20" fill="none" stroke="#FF4444" stroke-width="1"/>
+    <text x="125" y="1015" fill="#FF4444" font-family="monospace" font-size="7px">26</text>
+    
+    <rect x="1460" y="1020" width="40" height="20" fill="none" stroke="#FF4444" stroke-width="1"/>
+    <text x="1465" y="1015" fill="#FF4444" font-family="monospace" font-size="7px">27</text>
+  </g>
+
+  <!-- LAYER 4: Proportional Analysis -->
+  <g id="layer-proportions" data-layer="proportions">
+    <!-- Golden ratio divisions -->
+    <line x1="618" y1="100" x2="618" y2="1000" stroke="#FFD700" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="623" y="120" fill="#FFD700" font-family="monospace" font-size="8px">φ Left: 38.6%</text>
+    
+    <line x1="982" y1="100" x2="982" y2="1000" stroke="#FFD700" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="987" y="120" fill="#FFD700" font-family="monospace" font-size="8px">φ Right: 61.4%</text>
+    
+    <!-- Typography zone proportional analysis -->
+    <rect x="140" y="160" width="560" height="320" fill="none" stroke="#FFD700" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="145" y="490" fill="#FFD700" font-family="monospace" font-size="8px">Typography: 35% × 29%</text>
+    
+    <!-- Central proportional marker -->
+    <circle cx="800" cy="550" r="8" fill="#FFD700" opacity="0.7"/>
+    <text x="810" y="555" fill="#FFD700" font-family="monospace" font-size="8px">Center</text>
+  </g>
+
+  <!-- LAYER 5: Flow & Hierarchy -->
+  <g id="layer-flow" data-layer="flow">
+    <!-- Primary reading flow -->
+    <circle cx="420" cy="300" r="12" fill="#8844CC" opacity="0.8"/>
+    <text x="415" y="305" fill="white" font-family="monospace" font-size="9px" font-weight="bold">1</text>
+    
+    <circle cx="540" cy="530" r="10" fill="#8844CC" opacity="0.7"/>
+    <text x="537" y="535" fill="white" font-family="monospace" font-size="8px" font-weight="bold">2</text>
+    
+    <circle cx="950" cy="300" r="10" fill="#8844CC" opacity="0.7"/>
+    <text x="947" y="305" fill="white" font-family="monospace" font-size="8px" font-weight="bold">3</text>
+    
+    <circle cx="1130" cy="300" r="10" fill="#8844CC" opacity="0.6"/>
+    <text x="1127" y="305" fill="white" font-family="monospace" font-size="8px" font-weight="bold">4</text>
+    
+    <!-- Flow arrows -->
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+              refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#8844CC"/>
+      </marker>
+    </defs>
+    
+    <path d="M 420 312 Q 480 400 528 520" fill="none" stroke="#8844CC" 
+          stroke-width="2" marker-end="url(#arrowhead)" opacity="0.6"/>
+    <path d="M 750 300 Q 850 280 938 300" fill="none" stroke="#8844CC" 
+          stroke-width="2" marker-end="url(#arrowhead)" opacity="0.6"/>
+  </g>
+
+  <!-- LAYER 6: Info Panel -->
+  <g id="layer-info" data-layer="info">
+    <rect x="0" y="1100" width="1600" height="200" fill="#1a1a1a"/>
+    
+    <text x="20" y="1125" fill="white" font-family="monospace" font-size="14px" font-weight="bold">GRID ANALYSIS — SPANISH SPACE-TIME THEORY SPREAD</text>
+    
+    <text x="20" y="1145" fill="#FFD700" font-family="monospace" font-size="10px">FORMAT:</text>
+    <text x="120" y="1145" fill="white" font-family="monospace" font-size="10px">1600×1100px double-page spread | Academic philosophy book | Pages 26-27</text>
+    
+    <text x="20" y="1160" fill="#00CED1" font-family="monospace" font-size="10px">LAYOUT:</text>
+    <text x="120" y="1160" fill="white" font-family="monospace" font-size="10px">Asymmetric: Left typography-dominant | Right 3-column academic text | Central spine</text>
+    
+    <text x="20" y="1175" fill="#FF4444" font-family="monospace" font-size="10px">TYPE:</text>
+    <text x="120" y="1175" fill="white" font-family="monospace" font-size="10px">Large "EL ESPACIO Y TIEMPO" display | Academic body text | Mathematical annotations</text>
+    
+    <text x="20" y="1190" fill="#8844CC" font-family="monospace" font-size="10px">HIERARCHY:</text>
+    <text x="120" y="1190" fill="white" font-family="monospace" font-size="10px">1. Main title | 2. Secondary headings | 3. Right column text | 4. Diagrams</text>
+    
+    <text x="20" y="1230" fill="#FFD700" font-family="monospace" font-size="9px">OBSERVATIONS:</text>
+    <text x="20" y="1245" fill="white" font-family="monospace" font-size="9px">Typography-as-content approach | "ESPACIO Y TIEMPO" connects to philosophical subject</text>
+    <text x="20" y="1258" fill="white" font-family="monospace" font-size="9px">Academic text density on right | Black overlay creates typographic layers | Diagrams support theory</text>
+    <text x="20" y="1271" fill="white" font-family="monospace" font-size="9px">Spanish philosophical treatise | Mathematical General theory framework | Golden ratio proportions</text>
+  </g>
+
+</svg>

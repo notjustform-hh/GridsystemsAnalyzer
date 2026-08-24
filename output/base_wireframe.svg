@@ -1,0 +1,139 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('../shared/tokens.css');
+      
+      .grid-line { 
+        stroke: #E0E0E0; 
+        stroke-width: 0.5px; 
+        fill: none; 
+        opacity: 0.8; 
+      }
+      .grid-major { 
+        stroke: #BDBDBD; 
+        stroke-width: 1.5px; 
+        fill: none; 
+      }
+      .content-block { 
+        fill: #1A56A0; 
+        fill-opacity: 0.35; 
+        stroke: #1A56A0; 
+        stroke-width: 1.5px; 
+      }
+      .accent-block { 
+        fill: #E06070; 
+        fill-opacity: 0.35; 
+        stroke: #E06070; 
+        stroke-width: 1.5px; 
+      }
+      .priority-content { 
+        fill: #FFFFFF; 
+        fill-opacity: 0.9;
+        stroke: #E06070; 
+        stroke-width: 2px; 
+      }
+      .text-block { 
+        fill: #4A90D9; 
+        fill-opacity: 0.35; 
+        stroke: #4A90D9; 
+        stroke-width: 1.5px; 
+      }
+      .label { 
+        font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; 
+        font-size: 9px; 
+        fill: #666666; 
+      }
+      .measurement { 
+        font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; 
+        font-size: 8px; 
+        fill: #CC3333; 
+        font-weight: bold; 
+      }
+    </style>
+  </defs>
+  
+  <!-- Page divide -->
+  <line x1="400" y1="0" x2="400" y2="500" class="grid-major"/>
+  
+  <!-- LEFT PAGE ANALYSIS: 5-column grid (4 used) -->
+  <!-- Column guides -->
+  <line x1="80" y1="0" x2="80" y2="500" class="grid-line"/>
+  <line x1="160" y1="0" x2="160" y2="500" class="grid-line"/>
+  <line x1="240" y1="0" x2="240" y2="500" class="grid-line"/>
+  <line x1="320" y1="0" x2="320" y2="500" class="grid-line"/>
+  
+  <!-- Left page headline -->
+  <rect x="20" y="40" width="360" height="25" class="content-block"/>
+  <text x="25" y="55" class="label">HEADLINE: "On Criticism, Cynicism..."</text>
+  
+  <!-- Red overlay box (Layer 2) -->
+  <rect x="20" y="100" width="140" height="180" class="accent-block"/>
+  <text x="25" y="115" class="label">RED OVERLAY</text>
+  
+  <!-- White text on red (Layer 3 - Priority) -->
+  <rect x="30" y="120" width="120" height="40" class="priority-content"/>
+  <text x="35" y="135" class="label" fill="white">WHITE ON RED</text>
+  <text x="35" y="145" class="label" fill="white">Priority Content</text>
+  
+  <!-- Content columns -->
+  <rect x="20" y="300" width="70" height="150" class="text-block"/>
+  <rect x="100" y="300" width="70" height="150" class="text-block"/>
+  <rect x="180" y="300" width="70" height="150" class="text-block"/>
+  <rect x="260" y="300" width="70" height="150" class="text-block"/>
+  
+  <!-- Column measurements -->
+  <text x="25" y="490" class="measurement">20%</text>
+  <text x="105" y="490" class="measurement">20%</text>
+  <text x="185" y="490" class="measurement">20%</text>
+  <text x="265" y="490" class="measurement">20%</text>
+  <text x="340" y="490" class="measurement">20% (empty)</text>
+  
+  <!-- RIGHT PAGE ANALYSIS: 3:2:2:2 weighted system -->
+  <!-- Column guides for right page -->
+  <line x1="532" y1="0" x2="532" y2="500" class="grid-line"/>
+  <line x1="620" y1="0" x2="620" y2="500" class="grid-line"/>
+  <line x1="708" y1="0" x2="708" y2="500" class="grid-line"/>
+  
+  <!-- Right page headline -->
+  <rect x="420" y="40" width="360" height="25" class="content-block"/>
+  <text x="425" y="55" class="label">HEADLINE: "How Rejection Breeds..."</text>
+  
+  <!-- Red column (33% - 3 units) -->
+  <rect x="420" y="100" width="132" height="350" class="accent-block"/>
+  <text x="425" y="115" class="label">RED COLUMN</text>
+  <text x="425" y="125" class="label">3 UNITS (33%)</text>
+  
+  <!-- White text in red column -->
+  <rect x="430" y="140" width="112" height="60" class="priority-content"/>
+  <text x="435" y="155" class="label" fill="white">WHITE TEXT</text>
+  <text x="435" y="165" class="label" fill="white">Priority Content</text>
+  
+  <!-- Text columns (22% each - 2 units each) -->
+  <rect x="562" y="100" width="88" height="350" class="text-block"/>
+  <rect x="660" y="100" width="88" height="350" class="text-block"/>
+  <rect x="758" y="100" width="22" height="350" class="text-block"/>
+  
+  <!-- Right page measurements -->
+  <text x="475" y="470" class="measurement">33% (3u)</text>
+  <text x="575" y="470" class="measurement">22% (2u)</text>
+  <text x="673" y="470" class="measurement">22% (2u)</text>
+  <text x="763" y="470" class="measurement">22% (2u)</text>
+  
+  <!-- Mathematical relationship annotation -->
+  <text x="420" y="20" class="measurement">RIGHT: 3:2:2:2 RATIO SYSTEM</text>
+  <text x="420" y="30" class="measurement">Red = 1.5× Text Columns</text>
+  
+  <!-- Left page annotation -->
+  <text x="20" y="20" class="measurement">LEFT: 1:1:1:1:1 EQUAL SYSTEM</text>
+  <text x="20" y="30" class="measurement">5 columns, 4 used</text>
+  
+  <!-- Central circle and arrow elements -->
+  <circle cx="320" cy="200" r="40" class="accent-block" opacity="0.7"/>
+  <polygon points="350,190 380,200 350,210" class="accent-block"/>
+  <text x="325" y="205" class="label" fill="white">3</text>
+  
+  <!-- Layer indicators -->
+  <text x="10" y="480" class="label" style="font-size: 8px;">Layer 1: Grid + Headlines</text>
+  <text x="10" y="490" class="label" style="font-size: 8px;">Layer 2: Red Overlays</text>
+  <text x="10" y="500" class="label" style="font-size: 8px;">Layer 3: White on Red</text>
+</svg>

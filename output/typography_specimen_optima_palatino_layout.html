@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typography Specimen Spread - Systematic Comparison</title>
+    <link rel="stylesheet" href="../shared/tokens.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: var(--la-font-annotation);
+            background: var(--la-page-bg);
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        
+        .spread-container {
+            display: flex;
+            max-width: 1400px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            min-height: 700px;
+        }
+        
+        /* SPECIMEN PAGE STRUCTURE (Mirror Layout) */
+        .specimen-page {
+            flex: 1;
+            padding: 30px;
+            background: var(--la-page-bg);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .page-right {
+            border-left: 2px solid var(--la-grid-line-major);
+        }
+        
+        /* LAYER 1: Header Information */
+        .specimen-header {
+            height: 8%;
+            background: var(--la-text-heading);
+            opacity: var(--la-fill-opacity);
+            padding: 12px 16px;
+            border: 1px solid var(--la-text-heading);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .typeface-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--la-text-heading);
+        }
+        
+        .specimen-details {
+            font-size: 10px;
+            color: var(--la-annotation-text);
+            text-align: right;
+        }
+        
+        /* LAYER 2: Character Grid System (15×6) */
+        .character-grid {
+            height: 35%;
+            display: grid;
+            grid-template-columns: repeat(15, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            gap: 2px;
+            margin-bottom: 20px;
+            border: 1px solid var(--la-grid-line);
+            padding: 10px;
+        }
+        
+        .character-cell {
+            background: var(--la-text-body);
+            opacity: var(--la-fill-opacity);
+            border: 1px solid var(--la-text-body);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: normal;
+            transition: all 0.2s ease;
+        }
+        
+        /* Character highlighting system */
+        .character-highlighted {
+            background: var(--la-text-heading) !important;
+            color: white !important;
+            opacity: 1 !important;
+            font-weight: bold;
+        }
+        
+        /* Different highlighting patterns for each typeface */
+        .optima-nova .character-cell:nth-child(1),    /* A */
+        .optima-nova .character-cell:nth-child(18),   /* R */
+        .optima-nova .character-cell:nth-child(5),    /* E */
+        .optima-nova .character-cell:nth-child(19),   /* S */
+        .optima-nova .character-cell:nth-child(4),    /* D */
+        .optima-nova .character-cell:nth-child(20),   /* T */
+        .optima-nova .character-cell:nth-child(6) {   /* F */
+            background: var(--la-text-heading);
+            color: white;
+            opacity: 1;
+            font-weight: bold;
+        }
+        
+        .palatino-sans .character-cell:nth-child(1),   /* A */
+        .palatino-sans .character-cell:nth-child(17),  /* Q */
+        .palatino-sans .character-cell:nth-child(18),  /* R */
+        .palatino-sans .character-cell:nth-child(7),   /* G */
+        .palatino-sans .character-cell:nth-child(25),  /* Y */
+        .palatino-sans .character-cell:nth-child(11),  /* K */
+        .palatino-sans .character-cell:nth-child(16) { /* P */
+            background: var(--la-text-heading);
+            color: white;
+            opacity: 1;
+            font-weight: bold;
+        }
+        
+        /* LAYER 3: Specimen Text Blocks */
+        .specimen-blocks {
+            height: 40%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .specimen-row {
+            display: flex;
+            gap: 16px;
+            height: 45%;
+        }
+        
+        .character-samples {
+            flex: 1;
+            background: var(--la-text-body);
+            opacity: var(--la-fill-opacity);
+            border: 1px solid var(--la-text-body);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .sample-large {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--la-text-heading);
+        }
+        
+        .sample-medium {
+            font-size: 16px;
+            color: var(--la-text-heading);
+        }
+        
+        .sample-small {
+            font-size: 12px;
+            color: var(--la-text-caption);
+        }
+        
+        .paragraph-specimen {
+            flex: 2;
+            background: var(--la-text-body);
+            opacity: var(--la-fill-opacity);
+            border: 1px solid var(--la-text-body);
+            padding: 16px;
+            font-size: 11px;
+            line-height: 1.5;
+            color: var(--la-text-heading);
+        }
+        
+        /* Technical Information */
+        .technical-info {
+            height: 17%;
+            background: var(--la-text-caption);
+            opacity: var(--la-fill-opacity);
+            border: 1px solid var(--la-text-caption);
+            padding: 16px;
+            font-size: 9px;
+            line-height: 1.4;
+            color: var(--la-annotation-text);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+        }
+        
+        .tech-section h4 {
+            font-size: 10px;
+            font-weight: bold;
+            color: var(--la-text-heading);
+            margin: 0 0 8px 0;
+        }
+        
+        /* Algorithm indicators */
+        .algo-indicator {
+            position: absolute;
+            top: -35px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-family: monospace;
+            font-size: 10px;
+            color: var(--la-annotation-text);
+            font-weight: bold;
+        }
+        
+        .specimen-page.optima-nova::before {
+            content: "OPTIMA NOVA: 15×6 CHARACTER MATRIX + SPECIMEN BLOCKS";
+        }
+        
+        .specimen-page.palatino-sans::before {
+            content: "PALATINO SANS: MIRROR STRUCTURE FOR COMPARISON";
+        }
+        
+        /* Comparison indicators */
+        .comparison-arrow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 8px 12px;
+            font-size: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        .comparison-arrow::before {
+            content: "⟷ COMPARE";
+        }
+        
+        /* System explanation */
+        .system-explanation {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.9);
+            color: white;
+            padding: 16px;
+            font-family: monospace;
+            font-size: 9px;
+            border-radius: 4px;
+            max-width: 350px;
+        }
+        
+        /* Responsive adaptations */
+        @media (max-width: 1024px) {
+            .spread-container {
+                flex-direction: column;
+                max-width: 800px;
+            }
+            
+            .character-grid {
+                grid-template-columns: repeat(10, 1fr);
+                grid-template-rows: repeat(9, 1fr);
+            }
+            
+            .specimen-row {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .technical-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .algo-indicator {
+                position: static;
+                margin-bottom: 15px;
+                padding: 8px;
+                background: var(--la-margin);
+                border-radius: 3px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .character-grid {
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: repeat(15, 1fr);
+                height: auto;
+                min-height: 300px;
+            }
+            
+            .specimen-blocks {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="spread-container">
+        <!-- LEFT PAGE: Optima Nova Specimen -->
+        <div class="specimen-page optima-nova">
+            <div class="algo-indicator"></div>
+            
+            <!-- Layer 1: Header Information -->
+            <div class="specimen-header">
+                <div>
+                    <div class="typeface-name">Optima Nova</div>
+                    <div style="font-size: 10px; color: var(--la-text-caption);">Hermann Zapf, 1958/2002</div>
+                </div>
+                <div class="specimen-details">
+                    <div>SPECIMEN MAGAZINE</div>
+                    <div>FONTS</div>
+                    <div>ATLAS CHRISTIAN</div>
+                    <div>PAGE 05 TYPE</div>
+                </div>
+            </div>
+            
+            <!-- Layer 2: Character Grid (15×6) -->
+            <div class="character-grid">
+                <div class="character-cell">A</div>
+                <div class="character-cell">B</div>
+                <div class="character-cell">C</div>
+                <div class="character-cell">D</div>
+                <div class="character-cell">E</div>
+                <div class="character-cell">F</div>
+                <div class="character-cell">G</div>
+                <div class="character-cell">H</div>
+                <div class="character-cell">I</div>
+                <div class="character-cell">J</div>
+                <div class="character-cell">K</div>
+                <div class="character-cell">L</div>
+                <div class="character-cell">M</div>
+                <div class="character-cell">N</div>
+                <div class="character-cell">O</div>
+                
+                <div class="character-cell">P</div>
+                <div class="character-cell">Q</div>
+                <div class="character-cell">R</div>
+                <div class="character-cell">S</div>
+                <div class="character-cell">T</div>
+                <div class="character-cell">U</div>
+                <div class="character-cell">V</div>
+                <div class="character-cell">W</div>
+                <div class="character-cell">X</div>
+                <div class="character-cell">Y</div>
+                <div class="character-cell">Z</div>
+                <div class="character-cell">a</div>
+                <div class="character-cell">b</div>
+                <div class="character-cell">c</div>
+                <div class="character-cell">d</div>
+                
+                <div class="character-cell">e</div>
+                <div class="character-cell">f</div>
+                <div class="character-cell">g</div>
+                <div class="character-cell">h</div>
+                <div class="character-cell">i</div>
+                <div class="character-cell">j</div>
+                <div class="character-cell">k</div>
+                <div class="character-cell">l</div>
+                <div class="character-cell">m</div>
+                <div class="character-cell">n</div>
+                <div class="character-cell">o</div>
+                <div class="character-cell">p</div>
+                <div class="character-cell">q</div>
+                <div class="character-cell">r</div>
+                <div class="character-cell">s</div>
+                
+                <div class="character-cell">t</div>
+                <div class="character-cell">u</div>
+                <div class="character-cell">v</div>
+                <div class="character-cell">w</div>
+                <div class="character-cell">x</div>
+                <div class="character-cell">y</div>
+                <div class="character-cell">z</div>
+                <div class="character-cell">1</div>
+                <div class="character-cell">2</div>
+                <div class="character-cell">3</div>
+                <div class="character-cell">4</div>
+                <div class="character-cell">5</div>
+                <div class="character-cell">6</div>
+                <div class="character-cell">7</div>
+                <div class="character-cell">8</div>
+                
+                <div class="character-cell">9</div>
+                <div class="character-cell">0</div>
+                <div class="character-cell">?</div>
+                <div class="character-cell">!</div>
+                <div class="character-cell">.</div>
+                <div class="character-cell">,</div>
+                <div class="character-cell">;</div>
+                <div class="character-cell">:</div>
+                <div class="character-cell">"</div>
+                <div class="character-cell">'</div>
+                <div class="character-cell">-</div>
+                <div class="character-cell">—</div>
+                <div class="character-cell">/</div>
+                <div class="character-cell">\</div>
+                <div class="character-cell">@</div>
+                
+                <div class="character-cell">&</div>
+                <div class="character-cell">%</div>
+                <div class="character-cell">$</div>
+                <div class="character-cell">€</div>
+                <div class="character-cell">£</div>
+                <div class="character-cell">¥</div>
+                <div class="character-cell">(</div>
+                <div class="character-cell">)</div>
+                <div class="character-cell">[</div>
+                <div class="character-cell">]</div>
+                <div class="character-cell">{</div>
+                <div class="character-cell">}</div>
+                <div class="character-cell">+</div>
+                <div class="character-cell">=</div>
+                <div class="character-cell">×</div>
+            </div>
+            
+            <!-- Layer 3: Specimen Text Blocks -->
+            <div class="specimen-blocks">
+                <div class="specimen-row">
+                    <div class="character-samples">
+                        <div class="sample-large">ABCabc123..?!</div>
+                        <div class="sample-medium">ABCabc123..?!</div>
+                        <div class="sample-small">ABCabc123..?!</div>
+                    </div>
+                    <div class="paragraph-specimen">
+                        The organization for any typeface design must be both a study of form and spirit. In one, we study shapes in the most precise way, we refine with geometry. In spirit, both the historic tradition of type and its role as cultural ambassador should be respected. The significance for any typeface design must be both a study of form and spirit.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Technical Information -->
+            <div class="technical-info">
+                <div class="tech-section">
+                    <h4>ABCDEFGHIJK<br>LMNOPQRST<br>UVWXYZ &<br>0123456789</h4>
+                </div>
+                <div class="tech-section">
+                    <h4>ABCabc123..?!</h4>
+                    <div>Regular<br>REGULAR<br>Medium<br>MEDIUM</div>
+                </div>
+                <div class="tech-section">
+                    <h4>ABCARC123..?!</h4>
+                    <div>Bold<br>BOLD<br>Extra Bold<br>EXTRA BOLD</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- RIGHT PAGE: Palatino Sans (Mirror Structure) -->
+        <div class="specimen-page palatino-sans page-right">
+            <div class="algo-indicator"></div>
+            
+            <!-- Layer 1: Header Information -->
+            <div class="specimen-header">
+                <div>
+                    <div class="typeface-name">Palatino Sans</div>
+                    <div style="font-size: 10px; color: var(--la-text-caption);">Hermann Zapf, 2006</div>
+                </div>
+                <div class="specimen-details">
+                    <div>SPECIMEN MAGAZINE</div>
+                    <div>FONTS</div>
+                    <div>ATLAS CHRISTIAN</div>
+                    <div>PAGE 05 TYPE</div>
+                </div>
+            </div>
+            
+            <!-- Layer 2: Character Grid (15×6) - Identical Structure -->
+            <div class="character-grid">
+                <div class="character-cell">A</div>
+                <div class="character-cell">B</div>
+                <div class="character-cell">C</div>
+                <div class="character-cell">D</div>
+                <div class="character-cell">E</div>
+                <div class="character-cell">F</div>
+                <div class="character-cell">G</div>
+                <div class="character-cell">H</div>
+                <div class="character-cell">I</div>
+                <div class="character-cell">J</div>
+                <div class="character-cell">K</div>
+                <div class="character-cell">L</div>
+                <div class="character-cell">M</div>
+                <div class="character-cell">N</div>
+                <div class="character-cell">O</div>
+                
+                <div class="character-cell">P</div>
+                <div class="character-cell">Q</div>
+                <div class="character-cell">R</div>
+                <div class="character-cell">S</div>
+                <div class="character-cell">T</div>
+                <div class="character-cell">U</div>
+                <div class="character-cell">V</div>
+                <div class="character-cell">W</div>
+                <div class="character-cell">X</div>
+                <div class="character-cell">Y</div>
+                <div class="character-cell">Z</div>
+                <div class="character-cell">a</div>
+                <div class="character-cell">b</div>
+                <div class="character-cell">c</div>
+                <div class="character-cell">d</div>
+                
+                <div class="character-cell">e</div>
+                <div class="character-cell">f</div>
+                <div class="character-cell">g</div>
+                <div class="character-cell">h</div>
+                <div class="character-cell">i</div>
+                <div class="character-cell">j</div>
+                <div class="character-cell">k</div>
+                <div class="character-cell">l</div>
+                <div class="character-cell">m</div>
+                <div class="character-cell">n</div>
+                <div class="character-cell">o</div>
+                <div class="character-cell">p</div>
+                <div class="character-cell">q</div>
+                <div class="character-cell">r</div>
+                <div class="character-cell">s</div>
+                
+                <div class="character-cell">t</div>
+                <div class="character-cell">u</div>
+                <div class="character-cell">v</div>
+                <div class="character-cell">w</div>
+                <div class="character-cell">x</div>
+                <div class="character-cell">y</div>
+                <div class="character-cell">z</div>
+                <div class="character-cell">1</div>
+                <div class="character-cell">2</div>
+                <div class="character-cell">3</div>
+                <div class="character-cell">4</div>
+                <div class="character-cell">5</div>
+                <div class="character-cell">6</div>
+                <div class="character-cell">7</div>
+                <div class="character-cell">8</div>
+                
+                <div class="character-cell">9</div>
+                <div class="character-cell">0</div>
+                <div class="character-cell">?</div>
+                <div class="character-cell">!</div>
+                <div class="character-cell">.</div>
+                <div class="character-cell">,</div>
+                <div class="character-cell">;</div>
+                <div class="character-cell">:</div>
+                <div class="character-cell">"</div>
+                <div class="character-cell">'</div>
+                <div class="character-cell">-</div>
+                <div class="character-cell">—</div>
+                <div class="character-cell">/</div>
+                <div class="character-cell">\</div>
+                <div class="character-cell">@</div>
+                
+                <div class="character-cell">&</div>
+                <div class="character-cell">%</div>
+                <div class="character-cell">$</div>
+                <div class="character-cell">€</div>
+                <div class="character-cell">£</div>
+                <div class="character-cell">¥</div>
+                <div class="character-cell">(</div>
+                <div class="character-cell">)</div>
+                <div class="character-cell">[</div>
+                <div class="character-cell">]</div>
+                <div class="character-cell">{</div>
+                <div class="character-cell">}</div>
+                <div class="character-cell">+</div>
+                <div class="character-cell">=</div>
+                <div class="character-cell">×</div>
+            </div>
+            
+            <!-- Layer 3: Specimen Text Blocks (Mirror Layout) -->
+            <div class="specimen-blocks">
+                <div class="specimen-row">
+                    <div class="character-samples">
+                        <div class="sample-large">ABCabc123..?!</div>
+                        <div class="sample-medium">ABCabc123..?!</div>
+                        <div class="sample-small">ABCabc123..?!</div>
+                    </div>
+                    <div class="paragraph-specimen">
+                        The organization for any typeface design must be both a study of form and spirit. In one, we study shapes in the most precise way, we refine with geometry. In spirit, both the historic tradition of type and its role as cultural ambassador should be respected. The significance for any typeface design must be both a study of form and spirit.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Technical Information -->
+            <div class="technical-info">
+                <div class="tech-section">
+                    <h4>ABCDEFGHIJK<br>LMNOPQRST<br>UVWXYZ &<br>0123456789</h4>
+                </div>
+                <div class="tech-section">
+                    <h4>ABCabc123..?!</h4>
+                    <div>Light<br>LIGHT<br>Regular<br>REGULAR</div>
+                </div>
+                <div class="tech-section">
+                    <h4>ABCARC123..?!</h4>
+                    <div>Medium<br>MEDIUM<br>Bold<br>BOLD</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Comparison indicator -->
+        <div class="comparison-arrow"></div>
+    </div>
+    
+    <!-- System Explanation -->
+    <div class="system-explanation">
+        <div><strong>SYSTEMATIC SPECIMEN COMPARISON:</strong></div>
+        <div style="margin: 8px 0; border-top: 1px solid #555; padding-top: 8px;">
+            <div><strong>Grid System:</strong> 15×6 character matrix (90 positions)</div>
+            <div><strong>Cell Size:</strong> 20px × 25px standardized units</div>
+            <div><strong>Highlighting:</strong> Distinctive characters emphasized</div>
+            <div><strong>Mirror Layout:</strong> Identical structure enables comparison</div>
+        </div>
+        <div style="margin-top: 8px; border-top: 1px solid #555; padding-top: 8px;">
+            <div><strong>Information Hierarchy:</strong></div>
+            <div>• Header (8%): Typeface identification</div>
+            <div>• Grid (35%): Character comparison matrix</div>
+            <div>• Specimens (40%): Context examples</div>
+            <div>• Technical (17%): Detailed specifications</div>
+        </div>
+        <div style="margin-top: 8px; border-top: 1px solid #555; padding-top: 8px; font-size: 8px;">
+            <strong>ALGORITHM:</strong> Modular specimen system with selective emphasis<br>
+            <strong>COMPARISON:</strong> Direct visual analysis through parallel structure
+        </div>
+    </div>
+</body>
+</html>

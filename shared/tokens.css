@@ -1,0 +1,75 @@
+/* ============================================
+   LAYOUT ANATOMY ANALYZER — DESIGN TOKENS
+   ============================================
+   Canonical color and style definitions.
+   Referenced by: SVG wireframes, HTML prototypes.
+   
+   RULE: Do not add, rename, or remove tokens
+   between analysis runs. Consistency is mandatory.
+   ============================================ */
+
+:root {
+  /* -------------------------------------------
+     STRUCTURE
+     ------------------------------------------- */
+  --la-page-bg:             #FFFFFF;
+  --la-margin:              #F5F5F5;
+  --la-grid-line:           #E0E0E0;
+  --la-grid-line-major:     #BDBDBD;
+  --la-gutter:              #EEEEEE;
+
+  /* -------------------------------------------
+     CONTENT: TEXT
+     ------------------------------------------- */
+  --la-text-body:           #4A90D9;     /* Body text areas */
+  --la-text-heading:        #1A56A0;     /* Headings, titles */
+  --la-text-caption:        #7BB3E0;     /* Captions, footnotes */
+  --la-text-pullquote:      #2E74C0;     /* Pull quotes, callouts */
+
+  /* -------------------------------------------
+     CONTENT: IMAGES
+     ------------------------------------------- */
+  --la-image-photo:         #E8A838;     /* Photographs */
+  --la-image-illustration:  #F0C060;     /* Illustrations, drawings */
+  --la-image-icon:          #D4922A;     /* Icons, symbols */
+
+  /* -------------------------------------------
+     CONTENT: SHAPES & RULES
+     ------------------------------------------- */
+  --la-shape-decorative:    #E06070;     /* Decorative shapes, rules */
+  --la-shape-functional:    #C04858;     /* Functional dividers, borders */
+
+  /* -------------------------------------------
+     SPATIAL
+     ------------------------------------------- */
+  --la-whitespace:          transparent; /* Intentional white space */
+  --la-bleed:               #F0E6F6;    /* Bleed / overflow areas */
+
+  /* -------------------------------------------
+     ANNOTATIONS (SVG only)
+     ------------------------------------------- */
+  --la-annotation-line:     #999999;
+  --la-annotation-text:     #666666;
+  --la-dimension-line:      #CC3333;     /* Measurement lines */
+  --la-alignment-line:      #33AA33;     /* Alignment indicators */
+  --la-direction-vector:    #8844CC;     /* Reading / flow direction */
+
+  /* -------------------------------------------
+     RENDERING
+     ------------------------------------------- */
+  --la-fill-opacity:        0.35;
+  --la-stroke-opacity:      0.8;
+  --la-annotation-opacity:  0.6;
+
+  --la-stroke-grid:         0.5px;
+  --la-stroke-element:      1.5px;
+  --la-stroke-annotation:   0.75px;
+  --la-stroke-dimension:    1px;
+
+  /* -------------------------------------------
+     TYPOGRAPHY (SVG annotations)
+     ------------------------------------------- */
+  --la-font-annotation:     'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --la-font-size-label:     9px;
+  --la-font-size-dimension: 8px;
+}

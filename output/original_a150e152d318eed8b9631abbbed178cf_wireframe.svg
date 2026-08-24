@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1400 1000" 
+     role="img" aria-label="Grid analysis: ISO A-Series Paper Size Chart Diagram">
+
+  <!-- LAYER 1: Page Frame & Margins -->
+  <g id="layer-page" data-layer="page">
+    <rect x="0" y="0" width="1400" height="1000" 
+          fill="none" stroke="#FF00FF" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="700" y="15" text-anchor="middle" fill="#FF00FF" 
+          font-family="monospace" font-size="12px" font-weight="bold">ISO A-SERIES PAPER SIZE CHART: 1400 × 1000px (Technical Diagram)</text>
+    
+    <!-- Page boundaries -->
+    <rect x="30" y="30" width="1340" height="940" 
+          fill="none" stroke="#FF00FF" stroke-width="1.5"/>
+    <text x="35" y="25" fill="#FF00FF" font-family="monospace" font-size="10px">DIAGRAM AREA</text>
+    
+    <!-- Working margins -->
+    <rect x="50" y="50" width="1300" height="900" 
+          fill="none" stroke="#8B0000" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="55" y="45" fill="#8B0000" font-family="monospace" font-size="9px">WORKING MARGINS: 20px</text>
+  </g>
+
+  <!-- LAYER 2: Grid System -->
+  <g id="layer-grid" data-layer="grid">
+    <!-- Main diagram area -->
+    <rect x="70" y="70" width="1260" height="860" fill="none" stroke="#00CED1" stroke-width="2"/>
+    <text x="75" y="65" fill="#00CED1" font-family="monospace" font-size="9px" font-weight="bold">MAIN PROPORTIONAL DIAGRAM</text>
+    
+    <!-- A0 master rectangle -->
+    <rect x="90" y="90" width="840" height="594" fill="none" stroke="#00CED1" stroke-width="2"/>
+    <text x="95" y="85" fill="#00CED1" font-family="monospace" font-size="9px" font-weight="bold">A0 MASTER SIZE (841×1189mm)</text>
+    
+    <!-- Subdivision zones -->
+    <line x1="510" y1="90" x2="510" y2="684" stroke="#00CED1" stroke-width="1"/>
+    <text x="515" y="110" fill="#00CED1" font-family="monospace" font-size="8px">A1/A2 DIVISION</text>
+    
+    <line x1="90" y1="387" x2="930" y2="387" stroke="#00CED1" stroke-width="1"/>
+    <text x="95" y="405" fill="#00CED1" font-family="monospace" font-size="8px">A3 HORIZONTAL</text>
+    
+    <!-- Specifications table area -->
+    <rect x="960" y="200" width="350" height="450" fill="none" stroke="#00CED1" stroke-width="1.5"/>
+    <text x="965" y="195" fill="#00CED1" font-family="monospace" font-size="9px" font-weight="bold">SPECIFICATIONS TABLE</text>
+  </g>
+
+  <!-- LAYER 3: Content Blocks -->
+  <g id="layer-content" data-layer="content">
+    <!-- A0 label -->
+    <rect x="750" y="350" width="60" height="30" fill="none" stroke="#FF4444" stroke-width="2"/>
+    <text x="755" y="345" fill="#FF4444" font-family="monospace" font-size="8px" font-weight="bold">A0 LABEL</text>
+    
+    <!-- A1 rectangle -->
+    <rect x="510" y="90" width="420" height="297" fill="none" stroke="#FF4444" stroke-width="2"/>
+    <text x="515" y="85" fill="#FF4444" font-family="monospace" font-size="8px" font-weight="bold">A1 (594×841mm)</text>
+    
+    <!-- A2 rectangle -->
+    <rect x="90" y="90" width="420" height="297" fill="none" stroke="#FF4444" stroke-width="2"/>
+    <text x="95" y="85" fill="#FF4444" font-family="monospace" font-size="8px" font-weight="bold">A2 (420×594mm)</text>
+    
+    <!-- A3 rectangle -->
+    <rect x="90" y="387" width="210" height="297" fill="none" stroke="#FF4444" stroke-width="2"/>
+    <text x="95" y="405" fill="#FF4444" font-family="monospace" font-size="8px" font-weight="bold">A3 (297×420mm)</text>
+    
+    <!-- A4 rectangle -->
+    <rect x="300" y="536" width="148" height="148" fill="none" stroke="#FF4444" stroke-width="2"/>
+    <text x="305" y="530" fill="#FF4444" font-family="monospace" font-size="7px">A4</text>
+    
+    <!-- A5 rectangle -->
+    <rect x="300" y="387" width="105" height="148" fill="none" stroke="#FF4444" stroke-width="2"/>
+    <text x="305" y="380" fill="#FF4444" font-family="monospace" font-size="7px">A5</text>
+    
+    <!-- A6 rectangle -->
+    <rect x="405" y="536" width="105" height="74" fill="none" stroke="#FF4444" stroke-width="2"/>
+    <text x="410" y="530" fill="#FF4444" font-family="monospace" font-size="7px">A6</text>
+    
+    <!-- A7 rectangle -->
+    <rect x="405" y="387" width="74" height="105" fill="none" stroke="#FF4444" stroke-width="2"/>
+    <text x="410" y="380" fill="#FF4444" font-family="monospace" font-size="7px">A7</text>
+    
+    <!-- A8 rectangle -->
+    <rect x="479" y="387" width="52" height="74" fill="none" stroke="#FF4444" stroke-width="2"/>
+    <text x="485" y="380" fill="#FF4444" font-family="monospace" font-size="6px">A8</text>
+    
+    <!-- Specifications table -->
+    <rect x="980" y="220" width="310" height="400" fill="none" stroke="#FF4444" stroke-width="2"/>
+    <text x="985" y="215" fill="#FF4444" font-family="monospace" font-size="8px" font-weight="bold">SIZE SPECIFICATIONS</text>
+    
+    <!-- Table headers -->
+    <rect x="980" y="220" width="80" height="25" fill="none" stroke="#FF4444" stroke-width="1"/>
+    <text x="985" y="210" fill="#FF4444" font-family="monospace" font-size="7px">SIZE</text>
+    
+    <rect x="1060" y="220" width="120" height="25" fill="none" stroke="#FF4444" stroke-width="1"/>
+    <text x="1065" y="210" fill="#FF4444" font-family="monospace" font-size="7px">DIMENSIONS (mm)</text>
+    
+    <!-- Table rows -->
+    <rect x="980" y="245" width="310" height="25" fill="none" stroke="#FF4444" stroke-width="0.5"/>
+    <text x="985" y="255" fill="#FF4444" font-family="monospace" font-size="6px">A0 = 841 × 1189 mm</text>
+    
+    <rect x="980" y="270" width="310" height="25" fill="none" stroke="#FF4444" stroke-width="0.5"/>
+    <text x="985" y="280" fill="#FF4444" font-family="monospace" font-size="6px">A1 = 594 × 841 mm</text>
+    
+    <rect x="980" y="295" width="310" height="25" fill="none" stroke="#FF4444" stroke-width="0.5"/>
+    <text x="985" y="305" fill="#FF4444" font-family="monospace" font-size="6px">A2 = 420 × 594 mm</text>
+    
+    <rect x="980" y="320" width="310" height="25" fill="none" stroke="#FF4444" stroke-width="0.5"/>
+    <text x="985" y="330" fill="#FF4444" font-family="monospace" font-size="6px">A3 = 297 × 420 mm</text>
+    
+    <!-- Continue for remaining sizes A4-A10 -->
+    <rect x="980" y="345" width="310" height="275" fill="none" stroke="#FF4444" stroke-width="0.5"/>
+    <text x="985" y="355" fill="#FF4444" font-family="monospace" font-size="6px">A4-A10 REMAINING SIZES</text>
+  </g>
+
+  <!-- LAYER 4: Proportional Analysis -->
+  <g id="layer-proportions" data-layer="proportions">
+    <!-- Golden ratio relationships -->
+    <line x1="590" y1="70" x2="590" y2="930" stroke="#FFD700" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="595" y="90" fill="#FFD700" font-family="monospace" font-size="8px">√2 Ratio Division</text>
+    
+    <!-- A4 proportional emphasis -->
+    <rect x="300" y="536" width="148" height="148" fill="none" stroke="#FFD700" stroke-width="2" stroke-dasharray="3,3"/>
+    <text x="305" y="695" fill="#FFD700" font-family="monospace" font-size="8px">A4 Standard: 210×297mm</text>
+    
+    <!-- Proportional relationship indicators -->
+    <circle cx="375" cy="610" r="8" fill="#FFD700" opacity="0.7"/>
+    <text x="385" y="615" fill="#FFD700" font-family="monospace" font-size="8px">√2 Proportion</text>
+    
+    <!-- Mathematical relationship -->
+    <rect x="70" y="750" width="400" height="80" fill="none" stroke="#FFD700" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="75" y="770" fill="#FFD700" font-family="monospace" font-size="8px">Mathematical Relationship: Each size = previous ÷ √2</text>
+  </g>
+
+  <!-- LAYER 5: Flow & Hierarchy -->
+  <g id="layer-flow" data-layer="flow">
+    <!-- Size progression flow -->
+    <circle cx="780" cy="287" r="12" fill="#8844CC" opacity="0.8"/>
+    <text x="775" y="292" fill="white" font-family="monospace" font-size="9px" font-weight="bold">1</text>
+    
+    <circle cx="720" cy="240" r="10" fill="#8844CC" opacity="0.7"/>
+    <text x="717" y="245" fill="white" font-family="monospace" font-size="8px" font-weight="bold">2</text>
+    
+    <circle cx="300" cy="240" r="10" fill="#8844CC" opacity="0.7"/>
+    <text x="297" y="245" fill="white" font-family="monospace" font-size="8px" font-weight="bold">3</text>
+    
+    <circle cx="195" cy="540" r="10" fill="#8844CC" opacity="0.7"/>
+    <text x="192" y="545" fill="white" font-family="monospace" font-size="8px" font-weight="bold">4</text>
+    
+    <circle cx="375" cy="460" r="8" fill="#8844CC" opacity="0.6"/>
+    <text x="372" y="465" fill="white" font-family="monospace" font-size="7px" font-weight="bold">5</text>
+    
+    <circle cx="1135" cy="400" r="10" fill="#8844CC" opacity="0.7"/>
+    <text x="1132" y="405" fill="white" font-family="monospace" font-size="8px" font-weight="bold">6</text>
+    
+    <!-- Flow arrows showing subdivision progression -->
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+              refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#8844CC"/>
+      </marker>
+    </defs>
+    
+    <path d="M 768 287 Q 740 260 708 240" fill="none" stroke="#8844CC" 
+          stroke-width="2" marker-end="url(#arrowhead)" opacity="0.7"/>
+    <path d="M 708 250 Q 500 245 312 240" fill="none" stroke="#8844CC" 
+          stroke-width="2" marker-end="url(#arrowhead)" opacity="0.7"/>
+    <path d="M 300 252 Q 250 400 207 540" fill="none" stroke="#8844CC" 
+          stroke-width="2" marker-end="url(#arrowhead)" opacity="0.7"/>
+  </g>
+
+  <!-- LAYER 6: Info Panel -->
+  <g id="layer-info" data-layer="info">
+    <rect x="0" y="1000" width="1400" height="200" fill="#1a1a1a"/>
+    
+    <text x="20" y="1025" fill="white" font-family="monospace" font-size="14px" font-weight="bold">GRID ANALYSIS — ISO A-SERIES PAPER SIZE CHART DIAGRAM</text>
+    
+    <text x="20" y="1045" fill="#FFD700" font-family="monospace" font-size="10px">FORMAT:</text>
+    <text x="120" y="1045" fill="white" font-family="monospace" font-size="10px">1400×1000px technical diagram | ISO A-series paper standards | Educational format</text>
+    
+    <text x="20" y="1060" fill="#00CED1" font-family="monospace" font-size="10px">LAYOUT:</text>
+    <text x="120" y="1060" fill="white" font-family="monospace" font-size="10px">Nested proportional rectangles | A0 master size with progressive subdivisions | Specifications table</text>
+    
+    <text x="20" y="1075" fill="#FF4444" font-family="monospace" font-size="10px">CONTENT:</text>
+    <text x="120" y="1075" fill="white" font-family="monospace" font-size="10px">A0-A10 size relationships | Dimensional specifications | Mathematical √2 proportional system</text>
+    
+    <text x="20" y="1090" fill="#8844CC" font-family="monospace" font-size="10px">HIERARCHY:</text>
+    <text x="120" y="1090" fill="white" font-family="monospace" font-size="10px">1. A0 master | 2. A1 division | 3. A2 division | 4. A3-A4 progression | 5. Smaller sizes | 6. Specs</text>
+    
+    <text x="20" y="1130" fill="#FFD700" font-family="monospace" font-size="9px">OBSERVATIONS:</text>
+    <text x="20" y="1145" fill="white" font-family="monospace" font-size="9px">Mathematical precision | √2 proportional system ensures consistent scaling | Technical diagram clarity</text>
+    <text x="20" y="1158" fill="white" font-family="monospace" font-size="9px">Educational format | Standard reference documentation | Progressive size subdivision logic</text>
+    <text x="20" y="1171" fill="white" font-family="monospace" font-size="9px">ISO international standard | Design and printing industry foundation</text>
+  </g>
+
+</svg>

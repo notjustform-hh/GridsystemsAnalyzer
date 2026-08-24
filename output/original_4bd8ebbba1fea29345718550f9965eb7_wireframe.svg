@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1800 1200" 
+     role="img" aria-label="Grid analysis: Bruno Monguzzi Portfolio Magazine Spread">
+
+  <!-- LAYER 1: Page Frame & Margins -->
+  <g id="layer-page" data-layer="page">
+    <rect x="0" y="0" width="1800" height="1200" 
+          fill="none" stroke="#FF00FF" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="900" y="15" text-anchor="middle" fill="#FF00FF" 
+          font-family="monospace" font-size="12px" font-weight="bold">BRUNO MONGUZZI PORTFOLIO SPREAD: 1800 × 1200px (Designer Portfolio)</text>
+    
+    <!-- Page boundaries -->
+    <rect x="40" y="40" width="850" height="1120" 
+          fill="none" stroke="#FF00FF" stroke-width="1.5"/>
+    <text x="45" y="35" fill="#FF00FF" font-family="monospace" font-size="10px">LEFT PAGE - GEOMETRIC</text>
+    
+    <rect x="910" y="40" width="850" height="1120" 
+          fill="none" stroke="#FF00FF" stroke-width="1.5"/>
+    <text x="1335" y="35" fill="#FF00FF" font-family="monospace" font-size="10px">RIGHT PAGE - PORTRAIT</text>
+    
+    <!-- Central spine/gutter -->
+    <rect x="890" y="0" width="20" height="1200" fill="none" stroke="#FF00FF" stroke-width="2"/>
+    <text x="895" y="25" fill="#FF00FF" font-family="monospace" font-size="8px" transform="rotate(90 895 25)">SPINE</text>
+    
+    <!-- Working margins -->
+    <rect x="60" y="60" width="810" height="1080" 
+          fill="none" stroke="#8B0000" stroke-width="1" stroke-dasharray="3,3"/>
+    <rect x="930" y="60" width="810" height="1080" 
+          fill="none" stroke="#8B0000" stroke-width="1" stroke-dasharray="3,3"/>
+  </g>
+
+  <!-- LAYER 2: Grid System -->
+  <g id="layer-grid" data-layer="grid">
+    <!-- Header strip -->
+    <rect x="80" y="80" width="1640" height="40" fill="none" stroke="#00CED1" stroke-width="1"/>
+    <text x="85" y="75" fill="#00CED1" font-family="monospace" font-size="8px">MAGAZINE HEADER STRIP</text>
+    
+    <!-- LEFT PAGE: Geometric layout zones -->
+    <rect x="80" y="140" width="790" height="400" fill="none" stroke="#00CED1" stroke-width="1.5"/>
+    <text x="85" y="135" fill="#00CED1" font-family="monospace" font-size="9px" font-weight="bold">GEOMETRIC COMPOSITION AREA</text>
+    
+    <rect x="80" y="560" width="390" height="300" fill="none" stroke="#00CED1" stroke-width="1"/>
+    <text x="85" y="555" fill="#00CED1" font-family="monospace" font-size="8px">ARCHITECTURE IMAGE</text>
+    
+    <rect x="490" y="560" width="380" height="300" fill="none" stroke="#00CED1" stroke-width="1"/>
+    <text x="495" y="555" fill="#00CED1" font-family="monospace" font-size="8px">TYPOGRAPHY ZONE</text>
+    
+    <!-- RIGHT PAGE: Portrait &amp; content layout -->
+    <rect x="950" y="140" width="480" height="700" fill="none" stroke="#00CED1" stroke-width="2"/>
+    <text x="955" y="135" fill="#00CED1" font-family="monospace" font-size="9px" font-weight="bold">PORTRAIT PHOTOGRAPHY</text>
+    
+    <rect x="1450" y="140" width="270" height="700" fill="none" stroke="#00CED1" stroke-width="1.5"/>
+    <text x="1455" y="135" fill="#00CED1" font-family="monospace" font-size="9px" font-weight="bold">CONTENT &amp; GRID ZONE</text>
+    
+    <!-- Grid pattern area -->
+    <rect x="1450" y="200" width="270" height="400" fill="none" stroke="#00CED1" stroke-width="1"/>
+    <text x="1455" y="195" fill="#00CED1" font-family="monospace" font-size="8px">DOT GRID PATTERN</text>
+    
+    <!-- Text information area -->
+    <rect x="1450" y="620" width="270" height="220" fill="none" stroke="#00CED1" stroke-width="1"/>
+    <text x="1455" y="615" fill="#00CED1" font-family="monospace" font-size="8px">PROJECT INFORMATION</text>
+  </g>
+
+  <!-- LAYER 3: Content Blocks -->
+  <g id="layer-content" data-layer="content">
+    <!-- Magazine headers -->
+    <rect x="80" y="90" width="160" height="20" fill="none" stroke="#FF4444" stroke-width="1"/>
+    <text x="85" y="85" fill="#FF4444" font-family="monospace" font-size="7px">MAGAZINE MAGAZINE</text>
+    
+    <rect x="320" y="90" width="40" height="20" fill="none" stroke="#FF4444" stroke-width="1"/>
+    <text x="325" y="85" fill="#FF4444" font-family="monospace" font-size="7px">14</text>
+    
+    <rect x="950" y="90" width="160" height="20" fill="none" stroke="#FF4444" stroke-width="1"/>
+    <text x="955" y="85" fill="#FF4444" font-family="monospace" font-size="7px">MAGAZINE MAGAZINE</text>
+    
+    <rect x="1190" y="90" width="40" height="20" fill="none" stroke="#FF4444" stroke-width="1"/>
+    <text x="1195" y="85" fill="#FF4444" font-family="monospace" font-size="7px">14</text>
+    
+    <rect x="1580" y="90" width="120" height="20" fill="none" stroke="#FF4444" stroke-width="1"/>
+    <text x="1585" y="85" fill="#FF4444" font-family="monospace" font-size="7px">GLOBAL IDENTITY</text>
+    
+    <!-- LEFT PAGE: Geometric shapes -->
+    <polygon points="100,160 400,160 500,300 200,400 100,300" fill="none" stroke="#FF4444" stroke-width="3"/>
+    <text x="105" y="155" fill="#FF4444" font-family="monospace" font-size="8px" font-weight="bold">LARGE BLACK GEOMETRIC</text>
+    
+    <rect x="500" y="200" width="350" height="200" fill="none" stroke="#FF4444" stroke-width="2"/>
+    <text x="505" y="195" fill="#FF4444" font-family="monospace" font-size="8px">GEOMETRIC SHAPE 2</text>
+    
+    <!-- Typography elements left page -->
+    <rect x="150" y="420" width="300" height="60" fill="none" stroke="#FF4444" stroke-width="2"/>
+    <text x="155" y="415" fill="#FF4444" font-family="monospace" font-size="8px" font-weight="bold">"la luce in casa"</text>
+    
+    <!-- Architecture image -->
+    <rect x="100" y="580" width="350" height="260" fill="none" stroke="#FF4444" stroke-width="2"/>
+    <text x="105" y="575" fill="#FF4444" font-family="monospace" font-size="8px">ARCHITECTURE PHOTO</text>
+    
+    <!-- Typography block right side of left page -->
+    <rect x="510" y="580" width="340" height="260" fill="none" stroke="#FF4444" stroke-width="1.5"/>
+    <text x="515" y="575" fill="#FF4444" font-family="monospace" font-size="8px">PROJECT DESCRIPTION</text>
+    
+    <!-- RIGHT PAGE: Portrait -->
+    <rect x="970" y="160" width="440" height="660" fill="none" stroke="#FF4444" stroke-width="3"/>
+    <text x="975" y="155" fill="#FF4444" font-family="monospace" font-size="9px" font-weight="bold">BRUNO MONGUZZI PORTRAIT</text>
+    
+    <!-- "Eleven Posters" title -->
+    <rect x="1470" y="160" width="230" height="60" fill="none" stroke="#FF4444" stroke-width="2"/>
+    <text x="1475" y="155" fill="#FF4444" font-family="monospace" font-size="8px" font-weight="bold">ELEVEN POSTERS TITLE</text>
+    
+    <!-- Dot grid pattern -->
+    <rect x="1470" y="240" width="230" height="340" fill="none" stroke="#FF4444" stroke-width="2"/>
+    <text x="1475" y="235" fill="#FF4444" font-family="monospace" font-size="8px" font-weight="bold">DOT GRID OVERLAY</text>
+    
+    <!-- Project information blocks -->
+    <rect x="1470" y="640" width="230" height="180" fill="none" stroke="#FF4444" stroke-width="1.5"/>
+    <text x="1475" y="635" fill="#FF4444" font-family="monospace" font-size="8px">PROJECT DETAILS</text>
+    
+    <!-- Footer elements -->
+    <rect x="80" y="1100" width="40" height="20" fill="none" stroke="#FF4444" stroke-width="1"/>
+    <text x="85" y="1095" fill="#FF4444" font-family="monospace" font-size="6px">PAGE L</text>
+    
+    <rect x="1680" y="1100" width="40" height="20" fill="none" stroke="#FF4444" stroke-width="1"/>
+    <text x="1685" y="1095" fill="#FF4444" font-family="monospace" font-size="6px">PAGE R</text>
+  </g>
+
+  <!-- LAYER 4: Proportional Analysis -->
+  <g id="layer-proportions" data-layer="proportions">
+    <!-- Golden ratio divisions -->
+    <line x1="687" y1="60" x2="687" y2="1140" stroke="#FFD700" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="692" y="80" fill="#FFD700" font-family="monospace" font-size="8px">φ Left: 38.2%</text>
+    
+    <line x1="1113" y1="60" x2="1113" y2="1140" stroke="#FFD700" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="1118" y="80" fill="#FFD700" font-family="monospace" font-size="8px">φ Right: 61.8%</text>
+    
+    <!-- Portrait proportional analysis -->
+    <rect x="970" y="160" width="440" height="660" fill="none" stroke="#FFD700" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="975" y="830" fill="#FFD700" font-family="monospace" font-size="8px">Portrait: 24.4% × 55%</text>
+    
+    <!-- Geometric area proportional analysis -->
+    <rect x="100" y="160" width="750" height="240" fill="none" stroke="#FFD700" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="105" y="410" fill="#FFD700" font-family="monospace" font-size="8px">Geometric: 41.7% × 20%</text>
+    
+    <!-- Central proportional marker -->
+    <circle cx="900" cy="600" r="8" fill="#FFD700" opacity="0.7"/>
+    <text x="910" y="605" fill="#FFD700" font-family="monospace" font-size="8px">Center</text>
+  </g>
+
+  <!-- LAYER 5: Flow & Hierarchy -->
+  <g id="layer-flow" data-layer="flow">
+    <!-- Visual hierarchy flow -->
+    <circle cx="1190" cy="400" r="14" fill="#8844CC" opacity="0.8"/>
+    <text x="1186" y="406" fill="white" font-family="monospace" font-size="10px" font-weight="bold">1</text>
+    
+    <circle cx="300" cy="300" r="12" fill="#8844CC" opacity="0.8"/>
+    <text x="296" y="305" fill="white" font-family="monospace" font-size="9px" font-weight="bold">2</text>
+    
+    <circle cx="1585" cy="190" r="10" fill="#8844CC" opacity="0.7"/>
+    <text x="1582" y="195" fill="white" font-family="monospace" font-size="8px" font-weight="bold">3</text>
+    
+    <circle cx="300" cy="450" r="10" fill="#8844CC" opacity="0.7"/>
+    <text x="297" y="455" fill="white" font-family="monospace" font-size="8px" font-weight="bold">4</text>
+    
+    <circle cx="1585" cy="730" r="8" fill="#8844CC" opacity="0.6"/>
+    <text x="1582" y="735" fill="white" font-family="monospace" font-size="7px" font-weight="bold">5</text>
+    
+    <!-- Flow arrows -->
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+              refX="9" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#8844CC"/>
+      </marker>
+    </defs>
+    
+    <path d="M 1178 400 Q 750 350 312 300" fill="none" stroke="#8844CC" 
+          stroke-width="3" marker-end="url(#arrowhead)" opacity="0.7"/>
+    <path d="M 1585 200 Q 1585 350 1190 388" fill="none" stroke="#8844CC" 
+          stroke-width="2" marker-end="url(#arrowhead)" opacity="0.6"/>
+    <path d="M 300 312 Q 300 380 300 440" fill="none" stroke="#8844CC" 
+          stroke-width="2" marker-end="url(#arrowhead)" opacity="0.6"/>
+  </g>
+
+  <!-- LAYER 6: Info Panel -->
+  <g id="layer-info" data-layer="info">
+    <rect x="0" y="1200" width="1800" height="200" fill="#1a1a1a"/>
+    
+    <text x="20" y="1225" fill="white" font-family="monospace" font-size="14px" font-weight="bold">GRID ANALYSIS — BRUNO MONGUZZI PORTFOLIO MAGAZINE SPREAD</text>
+    
+    <text x="20" y="1245" fill="#FFD700" font-family="monospace" font-size="10px">FORMAT:</text>
+    <text x="120" y="1245" fill="white" font-family="monospace" font-size="10px">1800×1200px double-page spread | Designer portfolio | Editorial magazine format</text>
+    
+    <text x="20" y="1260" fill="#00CED1" font-family="monospace" font-size="10px">LAYOUT:</text>
+    <text x="120" y="1260" fill="white" font-family="monospace" font-size="10px">Asymmetric: Left geometric abstraction | Right portrait photography | Systematic content zones</text>
+    
+    <text x="20" y="1275" fill="#FF4444" font-family="monospace" font-size="10px">VISUAL:</text>
+    <text x="120" y="1275" fill="white" font-family="monospace" font-size="10px">Black geometric shapes | Bruno Monguzzi portrait | "Eleven Posters" | Dot grid pattern</text>
+    
+    <text x="20" y="1290" fill="#8844CC" font-family="monospace" font-size="10px">HIERARCHY:</text>
+    <text x="120" y="1290" fill="white" font-family="monospace" font-size="10px">1. Designer portrait | 2. Geometric elements | 3. Project title | 4. Typography | 5. Project info</text>
+    
+    <text x="20" y="1330" fill="#FFD700" font-family="monospace" font-size="9px">OBSERVATIONS:</text>
+    <text x="20" y="1345" fill="white" font-family="monospace" font-size="9px">Swiss design influence | Geometric abstraction paired with documentary photography | Professional portfolio format</text>
+    <text x="20" y="1358" fill="white" font-family="monospace" font-size="9px">Grid system integration | Typography hierarchy | Contemporary magazine design approach</text>
+    <text x="20" y="1371" fill="white" font-family="monospace" font-size="9px">Designer identity presentation with systematic information architecture</text>
+  </g>
+
+</svg>

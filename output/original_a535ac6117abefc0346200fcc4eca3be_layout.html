@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typography Spread - Spatial Algorithm Layout</title>
+    <link rel="stylesheet" href="../shared/tokens.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: var(--la-font-annotation);
+            background: var(--la-page-bg);
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .spread-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            min-height: 600px;
+        }
+        
+        /* LEFT PAGE: Asymmetric white space system */
+        .page-left {
+            flex: 1;
+            padding: 40px;
+            background: var(--la-page-bg);
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+        }
+        
+        /* Content positioned using golden ratio (38.2% from left) */
+        .left-content-block {
+            width: 30%; /* 30% of page width */
+            background: var(--la-text-body);
+            opacity: var(--la-fill-opacity);
+            padding: 20px;
+            border: 1px solid var(--la-text-body);
+            position: absolute;
+            left: 25%; /* Golden ratio approximation */
+            bottom: 15%; /* Lower third positioning */
+            z-index: 2;
+        }
+        
+        /* Visual indicator of white space */
+        .whitespace-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--la-annotation-text);
+            font-style: italic;
+            opacity: 0.4;
+        }
+        
+        /* RIGHT PAGE: Typography hierarchy system */
+        .page-right {
+            flex: 1;
+            padding: 40px;
+            background: var(--la-page-bg);
+            position: relative;
+            border-left: 2px solid var(--la-grid-line-major);
+        }
+        
+        /* Scale 1: Large serif headlines (60pt equivalent) */
+        .primary-headlines {
+            position: absolute;
+            top: 15%;
+            right: 8%;
+            width: 60%;
+            font-size: 48px;
+            line-height: 1.1;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-style: italic;
+            color: var(--la-text-heading);
+            text-align: right;
+        }
+        
+        /* Scale 2: Brand identity (24pt equivalent) */
+        .brand-identity {
+            position: absolute;
+            right: 8%;
+            top: 45%;
+            width: 25%;
+            font-size: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: var(--la-text-caption);
+            text-align: right;
+            line-height: 1.2;
+        }
+        
+        .brand-identity .magazine-name {
+            font-weight: 700;
+            color: var(--la-text-heading);
+        }
+        
+        /* Scale 3: Metadata (10pt equivalent) */
+        .metadata-top {
+            position: absolute;
+            top: 8%;
+            right: 5%;
+            font-size: 10px;
+            color: var(--la-annotation-text);
+            text-align: right;
+            line-height: 1.4;
+        }
+        
+        .metadata-bottom {
+            position: absolute;
+            bottom: 8%;
+            right: 5%;
+            font-size: 10px;
+            color: var(--la-annotation-text);
+            text-align: right;
+            line-height: 1.4;
+        }
+        
+        /* Algorithm indicators */
+        .algo-indicator {
+            position: absolute;
+            top: -35px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-family: monospace;
+            font-size: 11px;
+            color: var(--la-annotation-text);
+            font-weight: bold;
+        }
+        
+        .page-left::before {
+            content: "LEFT: 30% CONTENT + 70% WHITE SPACE (Golden Ratio Position)";
+        }
+        
+        .page-right::before {
+            content: "RIGHT: 3-SCALE TYPOGRAPHY HIERARCHY (Spatial Positioning)";
+        }
+        
+        /* Golden ratio guides (visual aid) */
+        .golden-ratio-guide {
+            position: absolute;
+            border-left: 1px dashed var(--la-alignment-line);
+            height: 100%;
+            opacity: 0.3;
+        }
+        
+        .page-left .golden-ratio-guide {
+            left: 38.2%; /* Golden ratio */
+        }
+        
+        .page-right .golden-ratio-guide {
+            right: 38.2%; /* Inverse golden ratio */
+        }
+        
+        /* Design principles demo */
+        .design-principles {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.85);
+            color: white;
+            padding: 16px;
+            font-family: monospace;
+            font-size: 10px;
+            border-radius: 4px;
+            max-width: 300px;
+        }
+        
+        /* Responsive adaptations */
+        @media (max-width: 768px) {
+            .spread-container {
+                flex-direction: column;
+                min-height: auto;
+            }
+            
+            .page-left {
+                min-height: 300px;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .left-content-block {
+                position: static;
+                width: 60%;
+                margin: auto;
+            }
+            
+            .page-right {
+                min-height: 400px;
+                padding: 20px;
+            }
+            
+            .primary-headlines {
+                position: static;
+                width: 100%;
+                font-size: 32px;
+                text-align: left;
+                margin-bottom: 30px;
+            }
+            
+            .brand-identity {
+                position: static;
+                width: 100%;
+                text-align: left;
+                margin: 20px 0;
+            }
+            
+            .metadata-top, .metadata-bottom {
+                position: static;
+                text-align: left;
+                margin: 10px 0;
+            }
+            
+            .algo-indicator {
+                position: static;
+                margin-bottom: 15px;
+                padding: 8px;
+                background: var(--la-margin);
+                border-radius: 3px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="spread-container">
+        <!-- LEFT PAGE: White Space Algorithm -->
+        <div class="page-left">
+            <div class="algo-indicator"></div>
+            
+            <!-- Golden ratio positioning guide -->
+            <div class="golden-ratio-guide"></div>
+            
+            <!-- White space visual indicator -->
+            <div class="whitespace-indicator">
+                <div style="font-size: 18px; margin-bottom: 10px;">~70% WHITE SPACE</div>
+                <div>Intentional negative space</div>
+                <div>Creates focus through isolation</div>
+            </div>
+            
+            <!-- Content positioned at golden ratio -->
+            <div class="left-content-block">
+                <strong>Content Block</strong><br>
+                30% width<br>
+                Golden ratio position<br>
+                <small>25% from left edge</small><br><br>
+                
+                <div style="font-size: 12px; line-height: 1.6; color: #333;">
+                This content demonstrates the spatial positioning algorithm 
+                where white space is treated as a design element, not leftover area.
+                </div>
+            </div>
+        </div>
+        
+        <!-- RIGHT PAGE: Typography Hierarchy -->
+        <div class="page-right">
+            <div class="algo-indicator"></div>
+            
+            <!-- Golden ratio positioning guide -->
+            <div class="golden-ratio-guide"></div>
+            
+            <!-- Scale 1: Primary Headlines (60pt) -->
+            <div class="primary-headlines">
+                helmut schmid<br>
+                hans rudolf bosshard<br>
+                christophe kulmer<br>
+                pierre neumann<br>
+                rené hurri
+            </div>
+            
+            <!-- Scale 2: Brand Identity (24pt) -->
+            <div class="brand-identity">
+                <div class="magazine-name">NEWWORK</div>
+                <div class="magazine-name">MAGAZINE</div>
+            </div>
+            
+            <!-- Scale 3: Metadata (10pt) -->
+            <div class="metadata-top">
+                SIX<br>
+                Issue Details<br>
+                Publication Info
+            </div>
+            
+            <div class="metadata-bottom">
+                Additional Info<br>
+                Credits<br>
+                Copyright
+            </div>
+        </div>
+    </div>
+    
+    <!-- Design Principles Explanation -->
+    <div class="design-principles">
+        <div><strong>SPATIAL ALGORITHM PRINCIPLES:</strong></div>
+        <div style="margin: 8px 0; border-top: 1px solid #555; padding-top: 8px;">
+            <div>• Golden Ratio Positioning: 38.2% : 61.8%</div>
+            <div>• White Space as Content: 70% negative space</div>
+            <div>• Typography Scales: 60pt → 24pt → 10pt</div>
+            <div>• Asymmetric Balance: 30:70 content ratio</div>
+            <div>• Non-Grid System: Optical positioning</div>
+        </div>
+        <div style="margin-top: 8px; border-top: 1px solid #555; padding-top: 8px; font-size: 9px;">
+            <strong>MATHEMATICAL RELATIONSHIPS:</strong><br>
+            Scale Ratios: 2.5:1 and 2.4:1 progression<br>
+            Spatial Distribution: Inverse asymmetry across pages
+        </div>
+    </div>
+</body>
+</html>

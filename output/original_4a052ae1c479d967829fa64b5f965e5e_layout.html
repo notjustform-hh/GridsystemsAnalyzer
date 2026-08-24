@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewWork Magazine Willi Kunz Black Spread</title>
+    <link rel="stylesheet" href="../shared/tokens.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: var(--la-page-bg);
+            line-height: 1.3;
+            color: white;
+        }
+        
+        .spread-container {
+            max-width: 1900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 910px 40px 910px; /* Left page | Spine | Right page */
+            height: 1300px;
+            background: #1a1a1a;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* LEFT PAGE */
+        .page-left {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            grid-template-rows: 60px 1fr 500px 60px; /* Header | Logo area | Text | Footer */
+            gap: 20px;
+            position: relative;
+            background: #1a1a1a;
+        }
+        
+        /* RIGHT PAGE */
+        .page-right {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 260px 160px 160px 160px 160px 120px; /* Name | 4 columns | Vertical */
+            grid-template-rows: 60px 1fr 500px 60px; /* Header | Name area | Text | Footer */
+            gap: 20px;
+            position: relative;
+            background: #1a1a1a;
+        }
+        
+        /* HEADERS */
+        .header-left {
+            grid-column: 1 / -1;
+            grid-row: 1;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 40px;
+            font-size: 11px;
+            font-weight: 400;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .header-right {
+            grid-column: 1 / -1;
+            grid-row: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 40px;
+            font-size: 11px;
+            font-weight: 400;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* CIRCULAR LOGO ELEMENT */
+        .circular-logo {
+            grid-column: 1;
+            grid-row: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .logo-circle {
+            width: 200px;
+            height: 200px;
+            border: 3px solid white;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 900;
+            color: white;
+            text-align: center;
+            font-family: 'Arial Black', sans-serif;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: 300;
+            margin-top: 5px;
+        }
+        
+        /* DESIGNER NAME CENTERPIECE */
+        .designer-name {
+            grid-column: 1;
+            grid-row: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(32px, 5vw, 64px);
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            font-family: 'Times New Roman', serif;
+            letter-spacing: 2px;
+        }
+        
+        /* LEFT DESCRIPTION TEXT */
+        .description-text {
+            grid-column: 1 / -1;
+            grid-row: 3;
+            font-size: 12px;
+            line-height: 1.5;
+            color: white;
+            text-align: justify;
+            padding: 20px;
+        }
+        
+        .description-section {
+            margin-bottom: 20px;
+        }
+        
+        .description-label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-size: 10px;
+            letter-spacing: 0.5px;
+            color: #ccc;
+        }
+        
+        .description-content {
+            font-weight: 300;
+            line-height: 1.4;
+        }
+        
+        /* RIGHT TEXT COLUMNS */
+        .text-column {
+            grid-row: 3;
+            font-size: 10px;
+            line-height: 1.4;
+            color: white;
+            text-align: justify;
+            padding: 15px;
+        }
+        
+        .text-column-1 { grid-column: 2; }
+        .text-column-2 { grid-column: 3; }
+        .text-column-3 { grid-column: 4; }
+        .text-column-4 { grid-column: 5; }
+        
+        .column-section {
+            margin-bottom: 15px;
+        }
+        
+        .column-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-size: 8px;
+            letter-spacing: 0.5px;
+            color: #ccc;
+        }
+        
+        .column-content {
+            font-weight: 300;
+            line-height: 1.3;
+        }
+        
+        /* VERTICAL BRANDING */
+        .vertical-branding {
+            grid-column: 6;
+            grid-row: 2 / 4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-size: 72px;
+            font-weight: 900;
+            color: white;
+            letter-spacing: 8px;
+            font-family: 'Arial Black', sans-serif;
+        }
+        
+        /* FOOTERS */
+        .footer-left {
+            grid-column: 1;
+            grid-row: 4;
+            align-self: end;
+            justify-self: start;
+            font-size: 10px;
+            color: #999;
+        }
+        
+        .footer-right {
+            grid-column: 6;
+            grid-row: 4;
+            align-self: end;
+            justify-self: end;
+            font-size: 10px;
+            color: #999;
+        }
+        
+        /* SPINE */
+        .spine {
+            background: #333;
+            position: relative;
+        }
+        
+        /* Layout Analysis Panel - Floating Box */
+        .layer-demo {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 12px;
+            font-family: monospace;
+            font-size: 10px;
+            border-radius: 4px;
+            max-width: 300px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .spread-container {
+                display: block;
+                height: auto;
+                max-width: 100%;
+                padding: 20px;
+            }
+            
+            .page-left,
+            .page-right {
+                display: block;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .header-left,
+            .header-right {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 30px;
+                font-size: 12px;
+            }
+            
+            .circular-logo {
+                margin: 30px 0;
+                justify-content: center;
+            }
+            
+            .logo-circle {
+                width: 150px;
+                height: 150px;
+                font-size: 32px;
+            }
+            
+            .logo-text {
+                font-size: 16px;
+            }
+            
+            .designer-name {
+                margin: 30px 0;
+                font-size: 36px;
+                text-align: center;
+            }
+            
+            .description-text {
+                margin: 20px 0;
+                font-size: 16px;
+                padding: 20px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid #333;
+            }
+            
+            .text-column {
+                margin: 20px 0;
+                font-size: 14px;
+                padding: 20px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid #333;
+            }
+            
+            .vertical-branding {
+                margin: 30px 0;
+                writing-mode: horizontal-tb;
+                text-orientation: initial;
+                font-size: 48px;
+                text-align: center;
+            }
+            
+            .description-section,
+            .column-section {
+                margin-bottom: 25px;
+            }
+            
+            .footer-left,
+            .footer-right {
+                margin: 20px 0;
+                text-align: center;
+            }
+            
+            .spine {
+                display: none;
+            }
+            
+            /* LOST IN RESPONSIVE: 
+               - Four-column systematic text structure collapses to vertical stack
+               - Circular logo loses spatial relationship to designer name
+               - High-contrast editorial sophistication simplified to mobile text
+               - Swiss typography systematic organization becomes sequential
+               - Vertical branding loses integrated magazine identity approach
+               - Professional designer profile format reduced to basic layout */
+        }
+    </style>
+</head>
+<body>
+    <div class="spread-container">
+        <!-- LEFT PAGE -->
+        <div class="page-left">
+            <div class="header-left">
+                <span>NewWork Magazine</span>
+                <span>2018</span>
+            </div>
+            
+            <div class="circular-logo">
+                <div class="logo-circle">
+                    A1
+                    <div class="logo-text">•1•</div>
+                </div>
+            </div>
+            
+            <div class="description-text">
+                <div class="description-section">
+                    <div class="description-label">Biography</div>
+                    <div class="description-content">
+                        Willi Kunz, pioneering graphic designer in New York, has been creating responsible design solutions and educating designers about design principles for over four decades. His work demonstrates a commitment to clarity, functionality, and systematic thinking.
+                    </div>
+                </div>
+                
+                <div class="description-section">
+                    <div class="description-label">Design Philosophy</div>
+                    <div class="description-content">
+                        The Swiss-born designer believes typography forms the foundation of all visual communication. His approach emphasizes grid systems, typography hierarchies, and systematic design thinking as essential tools for effective visual problem solving.
+                    </div>
+                </div>
+                
+                <div class="description-section">
+                    <div class="description-label">Teaching & Legacy</div>
+                    <div class="description-content">
+                        Through his teaching and practice, Kunz has influenced generations of designers. His work encompasses cultural institutions, corporate identity, and educational projects, always maintaining the highest standards of typographic excellence and systematic design approach.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-left">8</div>
+        </div>
+        
+        <!-- SPINE -->
+        <div class="spine"></div>
+        
+        <!-- RIGHT PAGE -->
+        <div class="page-right">
+            <div class="header-right">
+                <span>Willi Kunz</span>
+                <span>A5 - New</span>
+            </div>
+            
+            <div class="designer-name">
+                Willi Kunz
+            </div>
+            
+            <div class="text-column text-column-1">
+                <div class="column-section">
+                    <div class="column-label">Projects</div>
+                    <div class="column-content">
+                        Cultural institutions including museums, theaters, and educational organizations. Corporate identity systems for international companies. Editorial design for magazines and publications.
+                    </div>
+                </div>
+                
+                <div class="column-section">
+                    <div class="column-label">Recognition</div>
+                    <div class="column-content">
+                        Awards from major design organizations. Featured in design publications worldwide. Work in permanent collections.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-column text-column-2">
+                <div class="column-section">
+                    <div class="column-label">Methodology</div>
+                    <div class="column-content">
+                        Grid-based design systems. Typography as primary communication tool. Systematic color and spacing applications. Information hierarchy development.
+                    </div>
+                </div>
+                
+                <div class="column-section">
+                    <div class="column-label">Influence</div>
+                    <div class="column-content">
+                        Swiss design tradition. International Typographic Style. Contemporary design education. Professional practice standards.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-column text-column-3">
+                <div class="column-section">
+                    <div class="column-label">Education</div>
+                    <div class="column-content">
+                        Professor of Design. Workshop leader. Curriculum development. Student mentorship. Design criticism and evaluation.
+                    </div>
+                </div>
+                
+                <div class="column-section">
+                    <div class="column-label">Publications</div>
+                    <div class="column-content">
+                        Books on typography and design. Essays on design methodology. Educational materials. Design case studies.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-column text-column-4">
+                <div class="column-section">
+                    <div class="column-label">Current Work</div>
+                    <div class="column-content">
+                        Ongoing client projects. Educational initiatives. Design consultation. Professional development programs.
+                    </div>
+                </div>
+                
+                <div class="column-section">
+                    <div class="column-label">Contact</div>
+                    <div class="column-content">
+                        Studio information. Professional representation. Project inquiries. Educational partnerships.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="vertical-branding">
+                NEW
+            </div>
+            
+            <div class="footer-right">9</div>
+        </div>
+    </div>
+    
+    <!-- Layout Analysis Panel - Floating Box -->
+    <div class="layer-demo">
+        <div><strong>LAYOUT ANALYSIS - WILLI KUNZ BLACK SPREAD</strong></div>
+        <div style="margin-top: 8px;">
+            <div><strong>Grid System:</strong></div>
+            <div>Left: circular logo + description text</div>
+            <div>Right: designer name + 4-column structure</div>
+        </div>
+        <div style="margin-top: 8px;">
+            <div><strong>Proportions:</strong></div>
+            <div>1.46:1 spread ratio ≈ φ | Magazine format</div>
+            <div>Swiss typography influence</div>
+        </div>
+        <div style="margin-top: 8px; border-top: 1px solid #666; padding-top: 8px;">
+            <strong>Key Insight:</strong> Systematic designer profile<br>
+            High-contrast editorial sophistication<br>
+            <strong>Challenge:</strong> Multi-column structure lost on mobile
+        </div>
+    </div>
+</body>
+</html>
