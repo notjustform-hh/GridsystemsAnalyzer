@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Horizons Mission - Scientific Data Cards</title>
+    <link rel="stylesheet" href="../shared/tokens.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            background: var(--la-page-bg);
+            line-height: 1.3;
+            color: #000;
+        }
+        
+        .cards-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 560px 40px 560px; /* Left card | Gap | Right card */
+            height: 600px;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* LEFT CARD - Scientific Data */
+        .data-card {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 140px 280px;
+            grid-template-rows: 120px 80px 200px 80px;
+            gap: 20px;
+            position: relative;
+            background: white;
+            border: 2px solid #000;
+        }
+        
+        .space-image {
+            grid-column: 1;
+            grid-row: 1;
+            background: 
+                radial-gradient(circle at 30% 30%, #333 2px, transparent 2px),
+                radial-gradient(circle at 70% 70%, #333 1px, transparent 1px),
+                radial-gradient(circle at 20% 80%, #333 1px, transparent 1px),
+                linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            background-size: 40px 40px, 25px 25px, 35px 35px, cover;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .coordinates-section {
+            grid-column: 2;
+            grid-row: 1;
+            font-size: 10px;
+            line-height: 1.2;
+        }
+        
+        .coord-header {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .coord-value {
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .coord-details {
+            font-size: 9px;
+            color: #333;
+            line-height: 1.3;
+        }
+        
+        .observation-arc {
+            grid-column: 1 / -1;
+            grid-row: 3;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background: #fafafa;
+        }
+        
+        .arc-title {
+            font-weight: bold;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 5px;
+        }
+        
+        .measurement-group {
+            margin-bottom: 15px;
+        }
+        
+        .measurement-label {
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #666;
+            margin-bottom: 3px;
+        }
+        
+        .measurement-value {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .measurement-unit {
+            font-size: 9px;
+            color: #333;
+        }
+        
+        .mission-info {
+            grid-column: 1 / -1;
+            grid-row: 4;
+            padding: 15px;
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            font-size: 9px;
+        }
+        
+        .mission-title {
+            font-weight: bold;
+            font-size: 10px;
+            margin-bottom: 8px;
+        }
+        
+        .mission-details {
+            color: #333;
+            line-height: 1.4;
+        }
+        
+        /* MIDDLE GAP */
+        .gap {
+            background: var(--la-gutter);
+            position: relative;
+        }
+        
+        /* RIGHT CARD - Typography */
+        .typography-card {
+            padding: 20px;
+            display: grid;
+            grid-template-rows: 60px 1fr 160px;
+            position: relative;
+            background: white;
+            border: 2px solid #000;
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .mission-code {
+            font-weight: bold;
+        }
+        
+        .timestamp {
+            color: #666;
+        }
+        
+        .main-typography {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(32px, 8vw, 48px);
+            font-weight: 900;
+            color: #000;
+            text-align: center;
+            line-height: 0.9;
+            letter-spacing: -1px;
+            font-family: 'Arial Black', sans-serif;
+        }
+        
+        .striped-pattern {
+            position: relative;
+            background: repeating-linear-gradient(
+                45deg,
+                #000 0px,
+                #000 8px,
+                white 8px,
+                white 16px
+            );
+            border: 2px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .pattern-overlay {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            color: #000;
+            border: 2px solid #000;
+        }
+        
+        /* Layout Analysis Panel - Floating Box */
+        .layer-demo {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 12px;
+            font-family: monospace;
+            font-size: 10px;
+            border-radius: 4px;
+            max-width: 300px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .cards-container {
+                display: block;
+                height: auto;
+                max-width: 100%;
+                padding: 20px;
+            }
+            
+            .data-card,
+            .typography-card {
+                display: block;
+                margin-bottom: 30px;
+                padding: 20px;
+                height: auto;
+            }
+            
+            .space-image {
+                width: 100%;
+                height: 150px;
+                margin-bottom: 20px;
+                font-size: 14px;
+            }
+            
+            .coordinates-section {
+                margin-bottom: 20px;
+                padding: 15px;
+                background: #f8f8f8;
+                border: 1px solid #ddd;
+            }
+            
+            .coord-header {
+                font-size: 10px;
+            }
+            
+            .coord-value {
+                font-size: 14px;
+            }
+            
+            .coord-details {
+                font-size: 11px;
+            }
+            
+            .observation-arc {
+                margin-bottom: 20px;
+                padding: 20px;
+                font-size: 12px;
+            }
+            
+            .arc-title {
+                font-size: 14px;
+            }
+            
+            .measurement-value {
+                font-size: 16px;
+            }
+            
+            .mission-info {
+                margin-bottom: 20px;
+                padding: 20px;
+                font-size: 12px;
+            }
+            
+            .mission-title {
+                font-size: 14px;
+            }
+            
+            .card-header {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                font-size: 12px;
+                margin-bottom: 30px;
+            }
+            
+            .main-typography {
+                font-size: 36px;
+                margin: 40px 0;
+                padding: 20px;
+                border: 2px solid #000;
+                background: #f8f8f8;
+            }
+            
+            .striped-pattern {
+                height: 120px;
+                margin: 20px 0;
+            }
+            
+            .pattern-overlay {
+                font-size: 14px;
+                padding: 15px;
+            }
+            
+            .gap {
+                display: none;
+            }
+            
+            /* LOST IN RESPONSIVE: 
+               - Dual-card contrast eliminated - side-by-side comparison lost
+               - Scientific data spatial organization broken - becomes sequential
+               - Typography impact reduced - large format emphasis compromised  
+               - Geometric pattern integration simplified - visual sophistication lost
+               - Technical data cross-referencing difficult - separate sections now
+               - Mission branding loses dramatic contrast with data presentation
+               - Professional scientific format reduced to basic mobile layout
+               - Precise measurements lose systematic visual organization */
+        }
+    </style>
+</head>
+<body>
+    <div class="cards-container">
+        <!-- LEFT CARD - Scientific Data -->
+        <div class="data-card">
+            <div class="space-image">
+                MU69<br>
+                Space Object
+            </div>
+            
+            <div class="coordinates-section">
+                <div class="coord-header">MU69</div>
+                <div class="coord-value">(486958) 2014 MU69</div>
+                <div class="coord-details">
+                    RT1<br>
+                    N.S.A/APL<br>
+                    Q 31.7 ± 0.5
+                </div>
+            </div>
+            
+            <div class="observation-arc">
+                <div class="arc-title">Observation Arc</div>
+                
+                <div class="measurement-group">
+                    <div class="measurement-label">Aphelion</div>
+                    <div class="measurement-value">46.442 AU</div>
+                </div>
+                
+                <div class="measurement-group">
+                    <div class="measurement-label">Perihelion</div>
+                    <div class="measurement-value">42.721244±0.0014309 AU</div>
+                </div>
+                
+                <div class="measurement-group">
+                    <div class="measurement-label">Semi-Major Axis</div>
+                    <div class="measurement-value">44.5813998 AU</div>
+                </div>
+                
+                <div class="measurement-group">
+                    <div class="measurement-label">Eccentricity</div>
+                    <div class="measurement-value">0.04172249±0.0000346</div>
+                </div>
+            </div>
+            
+            <div class="mission-info">
+                <div class="mission-title">851 Days</div>
+                <div class="mission-details">
+                    HUBBLE ST<br>
+                    20500, 2,800 WT
+                </div>
+            </div>
+        </div>
+        
+        <!-- GAP -->
+        <div class="gap"></div>
+        
+        <!-- RIGHT CARD - Typography -->
+        <div class="typography-card">
+            <div class="card-header">
+                <div class="mission-code">NEW HORIZONS</div>
+                <div class="timestamp">25 JUNE 2014</div>
+            </div>
+            
+            <div class="main-typography">
+                NEW<br>
+                HORIZONS
+            </div>
+            
+            <div class="striped-pattern">
+                <div class="pattern-overlay">
+                    MISSION<br>
+                    SPACECRAFT
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Layout Analysis Panel - Floating Box -->
+    <div class="layer-demo">
+        <div><strong>LAYOUT ANALYSIS - NEW HORIZONS DATA CARDS</strong></div>
+        <div style="margin-top: 8px;">
+            <div><strong>Grid System:</strong></div>
+            <div>Dual card format (560px each)</div>
+            <div>Left: scientific data zones | Right: typography</div>
+        </div>
+        <div style="margin-top: 8px;">
+            <div><strong>Proportions:</strong></div>
+            <div>2:1 overall ratio | Square cards (1:1)</div>
+            <div>Scientific precision layout approach</div>
+        </div>
+        <div style="margin-top: 8px; border-top: 1px solid #666; padding-top: 8px;">
+            <strong>Key Insight:</strong> Technical data visualization<br>
+            High contrast scientific design aesthetic<br>
+            <strong>Challenge:</strong> Data organization lost on mobile
+        </div>
+    </div>
+</body>
+</html>
